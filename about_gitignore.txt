@@ -1,0 +1,2 @@
+You can add a hidden file called .gitignore in your GIT directory
+And add files that you wish to be 'ignored' when checking in files to GIT
