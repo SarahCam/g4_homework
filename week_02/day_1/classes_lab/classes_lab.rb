@@ -1,3 +1,5 @@
+# STUDENT CLASS
+
 class Student
   attr_accessor :name, :cohort
 
@@ -15,6 +17,8 @@ class Student
   end
 
 end
+
+# TEAM CLASS
 
 class Team
   attr_accessor :name, :players, :coach, :points
@@ -40,5 +44,55 @@ class Team
     end
     return @points
   end
+
+end
+
+# LIBRARY CLASS
+
+class Library
+  attr_accessor :books
+
+  def initialize(input_books)
+    @books = input_books
+  end
+
+  def get_book(title)
+    for book in @books
+      if book[:title] == title
+        return book
+      end
+    end
+    return nil
+  end
+
+  def get_book_rental_details(title)
+    for book in @books
+      if book[:title] == title
+        return book[:rental_details]
+      end
+    end
+    return nil
+  end
+
+  def add_new_book(book)
+    @books << book
+  end
+
+  def change_rental_details(title, student, date)
+    book = get_book(title)
+    book[:rental_details][:student_name] = student
+    book[:rental_details][:date] = date
+  end
+
+  def get_student_name(title)
+    book = get_book(title)
+    return book[:rental_details][:student_name]
+  end
+
+  def get_date(title)
+    book = get_book(title)
+    return book[:rental_details][:date]
+  end
+
 
 end
