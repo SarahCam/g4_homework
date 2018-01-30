@@ -27,7 +27,7 @@ class Team
     @name = input_name
     @players = input_players
     @coach = input_coach
-    @points = input_points
+    @points = 0
   end
 
   def add_player(player)
@@ -42,7 +42,6 @@ class Team
     if score == "win"
       @points += 1
     end
-    return @points
   end
 
 end
@@ -84,15 +83,15 @@ class Library
     book[:rental_details][:date] = date
   end
 
-  def get_student_name(title)
-    book = get_book(title)
-    return book[:rental_details][:student_name]
-  end
-
-  def get_date(title)
-    book = get_book(title)
-    return book[:rental_details][:date]
-  end
+  # def get_student_name(title)
+  #   book = get_book(title)
+  #   return book[:rental_details][:student_name]
+  # end
+  #
+  # def get_date(title)
+  #   book = get_book(title)
+  #   return book[:rental_details][:date]
+  # end
 
 
 end
