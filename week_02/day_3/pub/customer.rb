@@ -1,6 +1,6 @@
 class Customer
 
-  attr_reader :name, :wallet, :age, :drunk_level
+  attr_accessor :name, :wallet, :age, :drunk_level
 
   def initialize(name, wallet, age)
     @name = name
@@ -9,13 +9,6 @@ class Customer
     @drunk_level = 0
     @max_level = 10
     @legal_age = 18
-  end
-
-  def buy_drink(drink)
-    if !is_drunk()
-      @wallet -= drink.price
-      @drunk_level += drink.alcohol_units
-    end
   end
 
   def is_legal()

@@ -26,12 +26,12 @@ class PubTest < MiniTest::Test
     assert_equal(0, @pub.count_drinks)
   end
 
-  def test_sell_drink__over_18
+  def test_sell_drink__over_18__increase_till_count
     @pub.sell_drink(@drink, @customer1)
     assert_equal(5, @pub.till)
   end
 
-  def test_sell_drink__under_18
+  def test_sell_drink__under_18__do_not_increase_till_count
     @pub.sell_drink(@drink, @customer2)
     assert_equal(0, @pub.till)
   end
@@ -44,16 +44,14 @@ class PubTest < MiniTest::Test
     assert_equal(false, @customer2.is_legal)
   end
 
-  def test_sell_and_buy_drink__over_18
+  def test_sell_drink__over_18__complete_transaction
     @pub.sell_drink(@drink, @customer1)
-    @customer1.buy_drink(@drink)
     assert_equal(5, @pub.till)
     assert_equal(5, @customer1.wallet)
   end
 
-  def test_sell_and_buy_drink__under_18
+  def test_sell_drink__under_18__do_not_complete_transaction
     @pub.sell_drink(@drink, @customer2)
-    @customer1.buy_drink(@drink)
     assert_equal(0, @pub.till)
     assert_equal(30, @customer2.wallet)
   end
@@ -62,7 +60,6 @@ class PubTest < MiniTest::Test
     count = 0
     until count == 10
       @pub.sell_drink(@drink, @customer3)
-      @customer3.buy_drink(@drink)
       count += 1
     end
     assert_equal(25, @pub.till)
