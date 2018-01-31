@@ -10,12 +10,18 @@ class Customer
   end
 
   def buy_drink(drink)
-   @wallet -= drink.price
-   @drunk_level += drink.alcohol_units
+    if !is_drunk()
+      @wallet -= drink.price
+      @drunk_level += drink.alcohol_units
+    end
   end
 
-  def is_legal
+  def is_legal()
     return @age >= 18
+  end
+
+  def is_drunk()
+    return @drunk_level >= 2
   end
 
 end

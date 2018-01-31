@@ -13,7 +13,7 @@ class Pub
  end
 
  def sell_drink(drink, customer)
-   if customer.is_legal
+   if customer.is_legal() && !customer.is_drunk()
      @till += drink.price
    end
  end
