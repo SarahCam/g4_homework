@@ -8,7 +8,7 @@ require_relative("../customer")
 class PubTest < MiniTest::Test
   def setup
     @pub = Pub.new("The Clockwork")
-    @drink = Drink.new("Wine", 5)
+    @drink = Drink.new("Wine", 5, 2)
     @customer1 = Customer.new("Jack", 10, 20)
     @customer2 = Customer.new("Victor", 30, 15)
   end
