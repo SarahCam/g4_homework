@@ -23,4 +23,8 @@ class River
     @fishes.delete(fish)
   end
 
+  def lose_fish_with_no_name()
+    return @fishes.pop()
+  end
+
 end

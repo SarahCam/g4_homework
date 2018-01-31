@@ -26,9 +26,23 @@ class RiverTest < MiniTest::Test
     assert_equal(1, @amazon.fish_count())
   end
 
-  def test_add_fish
+  def test_add_fish__specific_fish
     @amazon.add_fish(@trout)
     assert_equal(1, @amazon.fish_count())
+  end
+
+  def test_lose_fish__specific_fish
+    fish = Fish.new("Pie")
+    @amazon.add_fish(fish)
+    @amazon.lose_fish(fish)
+    assert_equal(0, @amazon.fish_count())
+  end
+
+  def test_lose_fish__unidentified_fish
+    fish = Fish.new("Pie")
+    @amazon.add_fish(fish)
+    @amazon.lose_fish_with_no_name()
+    assert_equal(0, @amazon.fish_count())
   end
 
   def test_first_fish
