@@ -7,6 +7,8 @@ class Customer
     @wallet = wallet
     @age = age
     @drunk_level = 0
+    @max_level = 10
+    @legal_age = 18
   end
 
   def buy_drink(drink)
@@ -17,11 +19,11 @@ class Customer
   end
 
   def is_legal()
-    return @age >= 18
+    return @age >= @legal_age
   end
 
   def is_drunk()
-    return @drunk_level >= 2
+    return @drunk_level >= @max_level
   end
 
 end

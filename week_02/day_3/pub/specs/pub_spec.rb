@@ -11,6 +11,7 @@ class PubTest < MiniTest::Test
     @drink = Drink.new("Wine", 5, 2)
     @customer1 = Customer.new("Jack", 10, 20)
     @customer2 = Customer.new("Victor", 30, 15)
+    @customer3 = Customer.new("Billy", 100, 30)
   end
 
   def test_get_name
@@ -57,13 +58,15 @@ class PubTest < MiniTest::Test
     assert_equal(30, @customer2.wallet)
   end
 
-  def test_refuse_service__after_2_units_alcohol
-    @pub.sell_drink(@drink, @customer1)
-    @customer1.buy_drink(@drink)
-    @pub.sell_drink(@drink, @customer1)
-    @customer1.buy_drink(@drink)
-    assert_equal(5, @pub.till)
-    assert_equal(5, @customer1.wallet)
+  def test_refuse_service__after_max_units_alcohol__10_units
+    count = 0
+    until count == 10
+      @pub.sell_drink(@drink, @customer3)
+      @customer3.buy_drink(@drink)
+      count += 1
+    end
+    assert_equal(25, @pub.till)
+    assert_equal(75, @customer3.wallet)
   end
 
 end
