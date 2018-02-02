@@ -9,10 +9,23 @@ class RoomTest < MiniTest::Test
 
   def setup
     @room1 = Room.new("90's Revival")
+    @guest1 = Guest.new("Suzy Jones")
+    @guest2 = Guest.new("Bill Smith")
   end
 
   def test_get_name
     assert_equal("90's Revival", @room1.name)
+  end
+
+  def test_add_guest__1_guest
+    @room1.add_guest(@guest1)
+    assert_equal(1, @room1.count_guests)
+  end
+
+  def test_add_guest__2_guests
+    @room1.add_guest(@guest1)
+    @room1.add_guest(@guest2)
+    assert_equal(2, @room1.count_guests)
   end
 
 end
