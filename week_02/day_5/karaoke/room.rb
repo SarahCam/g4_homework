@@ -31,4 +31,8 @@ class Room
     return @songs.count()
   end
 
+  def is_full()
+    return count_guests >= @capacity
+  end
+
 end

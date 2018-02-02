@@ -53,4 +53,18 @@ class RoomTest < MiniTest::Test
     assert_equal(10, @room1.capacity)
   end
 
+  def test_is_full__false
+    @room1.add_guest(@guest1)
+    assert_equal(false, @room1.is_full())
+  end
+
+  def test_is_full__true
+    count = 0
+    while count < 10 do
+      @room1.add_guest(@guest1)
+      count += 1
+    end
+    assert_equal(true, @room1.is_full())
+  end
+
 end
