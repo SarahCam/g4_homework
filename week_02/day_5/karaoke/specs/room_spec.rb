@@ -4,6 +4,7 @@ require ("pry")
 
 require_relative ("../room.rb")
 require_relative ("../guest.rb")
+require_relative ("../song.rb")
 
 class RoomTest < MiniTest::Test
 
@@ -11,6 +12,8 @@ class RoomTest < MiniTest::Test
     @room1 = Room.new("90's Revival")
     @guest1 = Guest.new("Suzy Jones")
     @guest2 = Guest.new("Bill Smith")
+    @song1 = Song.new("Mamma Mia", "ABBA")
+    @song2 = Song.new("Take On Me", "A-HA")
   end
 
   def test_get_name
