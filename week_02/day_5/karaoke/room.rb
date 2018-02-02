@@ -2,7 +2,7 @@ require ("pry")
 
 class Room
 
-  attr_reader :name
+  attr_reader :name, :guests
 
   def initialize(name)
     @name = name
@@ -12,6 +12,10 @@ class Room
 
   def add_guest(guest)
     @guests << guest
+  end
+
+  def remove_guest(guest)
+    @guests.delete(guest)
   end
 
   def count_guests()
