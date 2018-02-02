@@ -67,4 +67,16 @@ class RoomTest < MiniTest::Test
     assert_equal(true, @room1.is_full())
   end
 
+  def test_add_guest__room_full_add_to_waiting_List
+    count = 0
+    while count < 12 do
+      @room1.add_guest(@guest1)
+      count += 1
+    end
+    assert_equal(true, @room1.is_full())
+    assert_equal(10, @room1.capacity)
+    assert_equal(10, @room1.count_guests)
+    assert_equal(2, @room1.count_waiting_list)
+  end
+
 end
