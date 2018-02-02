@@ -6,6 +6,8 @@ class Room
 
   def initialize(name)
     @name = name
+    @guests = []
+    @songs = []
   end
 
 end
