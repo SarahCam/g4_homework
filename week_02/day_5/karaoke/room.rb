@@ -18,8 +18,16 @@ class Room
     @guests.delete(guest)
   end
 
+  def add_song(song)
+    @songs << song
+  end
+
   def count_guests()
     return @guests.count()
+  end
+
+  def count_songs()
+    return @songs.count()
   end
 
 end
