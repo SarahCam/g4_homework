@@ -2,10 +2,11 @@ require ("pry")
 
 class Room
 
-  attr_reader :name, :guests
+  attr_reader :name, :guests, :capacity
 
-  def initialize(name)
+  def initialize(name, capacity)
     @name = name
+    @capacity = capacity
     @guests = []
     @songs = []
   end
