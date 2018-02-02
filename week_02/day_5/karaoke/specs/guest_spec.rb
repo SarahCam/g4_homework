@@ -14,5 +14,4 @@ class GuestTest < MiniTest::Test
     assert_equal("Mark Smith", @guest1.name)
   end
 
-
 end
