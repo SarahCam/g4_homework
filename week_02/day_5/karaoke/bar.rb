@@ -1,6 +1,6 @@
 require ("pry")
 
-class Venue
+class Bar
 
   attr_reader :name
 
