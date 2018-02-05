@@ -10,8 +10,8 @@ class RoomTest < MiniTest::Test
 
   def setup
     @room1 = Room.new("90's Revival", 10)
-    @guest1 = Guest.new("Suzy Jones")
-    @guest2 = Guest.new("Bill Smith")
+    @guest1 = Guest.new("Suzy Jones", 200)
+    @guest2 = Guest.new("Bill Smith", 100)
     @song1 = Song.new("Mamma Mia", "ABBA")
     @song2 = Song.new("Take On Me", "A-HA")
   end
