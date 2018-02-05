@@ -20,4 +20,8 @@ class Bar
     return @rooms.count()
   end
 
+  def check_in(guest)
+    return guest.can_pay(@entry_fee) ? true : false
+  end
+
 end

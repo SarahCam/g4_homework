@@ -9,4 +9,8 @@ class Guest
     @money = money
   end
 
+  def can_pay(entry_fee)
+    return @money >= entry_fee
+  end
+
 end
