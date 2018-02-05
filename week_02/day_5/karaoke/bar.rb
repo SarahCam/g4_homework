@@ -18,4 +18,8 @@ class Bar
     return @rooms.count()
   end
 
+  def has_money(guest)
+    return true
+  end
+
 end
