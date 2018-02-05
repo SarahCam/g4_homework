@@ -38,12 +38,12 @@ class BarTest < MiniTest::Test
     assert_equal(10, @bar1.entry_fee)
   end
 
-  def test_has_money__YES
-    assert(true, @bar1.has_money(@guest2))
-  end
-  
-  def test_guest_can_pay__NO
-    assert(true, @bar1.has_money(@guest1))
-  end
+  # def test_has_money__YES
+  #   assert(true, @bar1.has_money(@guest2))
+  # end
+
+  # def test_guest_can_pay__NO
+  #   assert(false, @bar1.has_money(@guest1))
+  # end
 
 end

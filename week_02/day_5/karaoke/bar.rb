@@ -1,5 +1,7 @@
 require ("pry")
 
+require_relative("./guest.rb")
+
 class Bar
 
   attr_reader :name, :entry_fee
@@ -16,10 +18,6 @@ class Bar
 
   def count_rooms
     return @rooms.count()
-  end
-
-  def has_money(guest)
-    return true
   end
 
 end
