@@ -8,7 +8,7 @@ require_relative ("../room.rb")
 class BarTest < MiniTest::Test
 
   def setup
-    @bar1 = Bar.new("HotShots")
+    @bar1 = Bar.new("HotShots", 10)
     @room1 = Room.new("70's Disco", 20)
     @room2 = Room.new("80's Electric", 20)
     @room3 = Room.new("90's Indie", 20)
@@ -28,6 +28,10 @@ class BarTest < MiniTest::Test
     @bar1.add_room(@room2)
     @bar1.add_room(@room3)
     assert_equal(3, @bar1.count_rooms())
+  end
+
+  def test_get_entry_fee
+    assert_equal(10, @bar1.entry_fee)
   end
 
 end

@@ -2,11 +2,12 @@ require ("pry")
 
 class Bar
 
-  attr_reader :name
+  attr_reader :name, :entry_fee
 
-  def initialize(name)
+  def initialize(name, entry_fee)
     @name = name
     @rooms = []
+    @entry_fee = entry_fee
   end
 
   def add_room(room)
