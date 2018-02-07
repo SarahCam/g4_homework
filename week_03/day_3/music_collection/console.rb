@@ -49,6 +49,7 @@ album4.save()
 ### LIST ALL ARTISTS / ALBUMS ############################################
 
 all_albums = Album.list_all()
+all_artists = Artist.list_all()
 
 ### DEBUGGING ############################################################
 
