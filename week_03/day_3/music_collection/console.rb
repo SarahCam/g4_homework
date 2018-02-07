@@ -67,9 +67,17 @@ artist1.name = "GAGA"
 artist1.edit()
 
 ### EDIT ALBUM ###########################################################
-### DELETE ARTIST ########################################################
+
+
 ### DELETE ALBUM #########################################################
 
+delete_album1_DELETED = album1.delete_me()
+
+### DELETE ARTIST WITH NO ALBUMS #########################################
+
+delete_artist1_DELETED = artist1.delete_me()
+
+### ATTEMPT TO DELETE ARTIST WITH ALBUMS #################################
 
 ### DEBUGGING ############################################################
 
