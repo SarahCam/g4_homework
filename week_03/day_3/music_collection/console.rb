@@ -16,10 +16,13 @@ artist1.save()
 
 album1 = Album.new( {
   'name' => 'Artpop',
-  'genre' => 'pop'
+  'genre' => 'pop',
+  'artist_id' => artist1.id
   } )
 
 album1.save()
+
+### DEBUGGING ############################################################
 
 binding.pry
 nil

@@ -13,8 +13,8 @@ class Album
   end
 
   def save()
-    sql = "INSERT INTO albums (name, genre) VALUES ($1, $2) RETURNING id"
-    values = [@name, @genre]
+    sql = "INSERT INTO albums (name, genre, artist_id) VALUES ($1, $2, $3) RETURNING id"
+    values = [@name, @genre, @artist_id]
     save = SqlRunner.run(sql, values)
     @id = save[0]["id"].to_i
   end
