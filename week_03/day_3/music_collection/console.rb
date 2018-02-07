@@ -61,6 +61,16 @@ artist2_albums = artist2.my_albums()
 album1_artist = album1.get_artist()
 album2_artist = album2.get_artist()
 
+### EDIT ARTIST ##########################################################
+
+artist1.name = "GAGA"
+artist1.edit()
+
+### EDIT ALBUM ###########################################################
+### DELETE ARTIST ########################################################
+### DELETE ALBUM #########################################################
+
+
 ### DEBUGGING ############################################################
 
 binding.pry
