@@ -46,6 +46,10 @@ album2.save()
 album3.save()
 album4.save()
 
+### LIST ALL ARTISTS / ALBUMS ############################################
+
+all_albums = Album.list_all()
+
 ### DEBUGGING ############################################################
 
 binding.pry
