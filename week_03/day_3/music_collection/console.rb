@@ -51,9 +51,15 @@ album4.save()
 all_albums = Album.list_all()
 all_artists = Artist.list_all()
 
-### LIST ALL ALBUMS FOR AN ARTIST ######################################
+### LIST ALL ALBUMS FOR AN ARTIST ########################################
 
+artist1_albums = artist1.my_albums()
 artist2_albums = artist2.my_albums()
+
+### SHOW ARTIST THAT CREATED THIS ALBUM ##################################
+
+album1_artist = album1.get_artist()
+album2_artist = album2.get_artist()
 
 ### DEBUGGING ############################################################
 
