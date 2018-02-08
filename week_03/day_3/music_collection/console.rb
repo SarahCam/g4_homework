@@ -73,7 +73,9 @@ album1.edit()
 
 ### Find Artists/Albums by their ID ######################################
 
-my_artist1 = artist1.find()
+my_artist1 = artist1.find_me()
+
+my_artist2 = Artist.find(artist2.id)
 
 ### DELETE ALBUM #########################################################
 
