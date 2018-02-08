@@ -81,6 +81,7 @@ delete_artist1_DELETED = artist1.delete_me()
 
 ### ATTEMPT TO DELETE ARTIST WITH ALBUMS #################################
 
+delete_artist2_DELETE_CASCADE = artist2.delete_me()
 
 ### Find Artists/Albums by their ID ######################################
 
