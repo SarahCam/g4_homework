@@ -68,6 +68,8 @@ artist1.edit()
 
 ### EDIT ALBUM ###########################################################
 
+album1.name = "ART POP"
+album1.edit()
 
 ### DELETE ALBUM #########################################################
 
@@ -78,6 +80,11 @@ delete_album1_DELETED = album1.delete_me()
 delete_artist1_DELETED = artist1.delete_me()
 
 ### ATTEMPT TO DELETE ARTIST WITH ALBUMS #################################
+
+
+### Find Artists/Albums by their ID ######################################
+
+
 
 ### DEBUGGING ############################################################
 
