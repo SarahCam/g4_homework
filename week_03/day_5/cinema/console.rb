@@ -22,6 +22,9 @@ customer5.save()
 customer6.save()
 
 # READ    --  DATA FROM TABLES
+
+all_customers = Customer.all()
+
 # UPDATE  --  DATA IN TABLES
 
 customer1.name = 'Mary Williams'
