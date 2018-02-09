@@ -1,18 +1,28 @@
 require('pry')
 require_relative('models/customer')
+require_relative('models/film')
 
 # DELETE  --  DATA FROM TABLES
 
 Customer.delete_all()
+Film.delete_all()
 
 # CREATE  --  DATA IN TABLES
 
-customer1 = Customer.new ({'name' => 'Veronica Page', 'funds' => 40})
-customer2 = Customer.new ({'name' => 'Albert Dodds', 'funds' => 20})
-customer3 = Customer.new ({'name' => 'Sally Smith', 'funds' => 30.50})
-customer4 = Customer.new ({'name' => 'Peter Croft', 'funds' => 10})
-customer5 = Customer.new ({'name' => 'Amy Haversham', 'funds' => 100})
-customer6 = Customer.new ({'name' => 'John MacDonald', 'funds' => 70.30})
+customer1 = Customer.new ({'name' => 'Veronica Page', 'funds' => 3.50})
+customer2 = Customer.new ({'name' => 'Albert Dodds', 'funds' => 6})
+customer3 = Customer.new ({'name' => 'Sally Smith', 'funds' => 7})
+customer4 = Customer.new ({'name' => 'Peter Croft', 'funds' => 12.70})
+customer5 = Customer.new ({'name' => 'Amy Haversham', 'funds' => 20})
+customer6 = Customer.new ({'name' => 'John MacDonald', 'funds' => 100})
+
+film1 = Film.new ({'title' => 'Godzilla', 'price' => 3.50})
+film2 = Film.new ({'title' => 'The Shining', 'price' => 3.50})
+film3 = Film.new ({'title' => 'Electric Dreams', 'price' => 3.50})
+film4 = Film.new ({'title' => 'Paddington', 'price' => 7})
+film5 = Film.new ({'title' => 'Insideous', 'price' => 7})
+film6 = Film.new ({'title' => 'The Girl on the Train', 'price' => 7})
+
 
 customer1.save()
 customer2.save()
@@ -21,9 +31,17 @@ customer4.save()
 customer5.save()
 customer6.save()
 
+film1.save()
+film2.save()
+film3.save()
+film4.save()
+film5.save()
+film6.save()
+
 # READ    --  DATA FROM TABLES
 
 all_customers = Customer.all()
+all_films = Film.all()
 
 # UPDATE  --  DATA IN TABLES
 
