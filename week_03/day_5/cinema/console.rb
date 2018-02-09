@@ -24,5 +24,9 @@ customer6.save()
 # READ    --  DATA FROM TABLES
 # UPDATE  --  DATA IN TABLES
 
+customer1.name = 'Mary Williams'
+customer1.update()
+
+
 binding.pry
 nil
