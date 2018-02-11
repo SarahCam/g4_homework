@@ -12,6 +12,13 @@ class Film
     @price = options['price'].to_f
   end
 
+  def count_customers()
+    sql = "SELECT count(*) FROM tickets WHERE film_id = $1"
+    values = [@id]
+    count = SqlRunner.run(sql, values)[0]["count"].to_i
+    return count
+  end
+
  # CREATE
   def save()
     sql = "INSERT INTO films (title, price) VALUES ($1, $2) RETURNING id"
@@ -47,6 +54,13 @@ class Film
     sql = "SELECT * FROM films"
     films = SqlRunner.run(sql)
     return films.map { |film| Film.new(film) }
+  end
+
+  def self.get_film(title)
+    sql = "SELECT * FROM films WHERE title = $1"
+    values = [title]
+    film = SqlRunner.run(sql, values)[0]
+    return Film.new(film)
   end
 
 end

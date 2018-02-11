@@ -71,14 +71,15 @@ all_customers = Customer.all()
 all_films = Film.all()
 all_tickets = Ticket.all()
 
-# GET CUSTOMER - NUMBER OF TICKETS BOUGHT TO-UPDATE
+# GET CUSTOMER - NUMBER OF TICKETS BOUGHT TO-DATE
 mary = Customer.get_customer("Mary Williams")
 mary_tickets = mary.count_tickets()
 peter = Customer.get_customer("Peter Croft")
 peter_tickets = peter.count_tickets()
 
-
-
+# GET FILM - NUMBER OF CUSTOMERS WHO'VE BOUGHT TICKETS TO THAT FILM TO-DATE
+godzilla = Film.get_film("Godzilla")
+godzilla_customers = godzilla.count_customers()
 
 # FETCH ALL FILMS FOR GIVEN CUSTOMER
 cust4_films = customer4.films()
