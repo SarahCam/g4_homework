@@ -28,6 +28,12 @@ class Ticket
     return Film.new(film[0])
   end
 
+  def charge_customer()
+    price = get_film().price
+    customer = get_customer
+    customer.decrease_funds(price)
+  end
+
  # CREATE
   def save()
     sql = "INSERT INTO tickets (customer_id, film_id) VALUES ($1, $2) RETURNING id"

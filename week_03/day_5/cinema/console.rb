@@ -44,24 +44,19 @@ ticket4 = Ticket.new ({'customer_id' => customer4.id, 'film_id' => film4.id})
 ticket5 = Ticket.new ({'customer_id' => customer4.id, 'film_id' => film1.id})
 
 ticket1.save()
-price = ticket1.get_film().price
-customer1.decrease_funds(price)
+ticket1.charge_customer()
 
 ticket2.save()
-price = ticket1.get_film().price
-customer1.decrease_funds(price)
+ticket2.charge_customer()
 
 ticket3.save()
-price = ticket1.get_film().price
-customer1.decrease_funds(price)
+ticket3.charge_customer()
 
 ticket4.save()
-price = ticket1.get_film().price
-customer1.decrease_funds(price)
+ticket4.charge_customer()
 
 ticket5.save()
-price = ticket1.get_film().price
-customer1.decrease_funds(price)
+ticket5.charge_customer()
 
 # READ    --  DATA FROM TABLES
 all_customers = Customer.all()
