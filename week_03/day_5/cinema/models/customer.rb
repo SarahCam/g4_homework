@@ -18,6 +18,13 @@ class Customer
     update()
   end
 
+  def count_tickets()
+    sql = "SELECT count(*) FROM tickets WHERE customer_id = $1"
+    values = [@id]
+    count = SqlRunner.run(sql, values)[0]["count"].to_i
+    return count
+  end
+
  # CREATE
   def save()
     sql = "INSERT INTO customers (name, funds) VALUES ($1, $2) RETURNING id"
