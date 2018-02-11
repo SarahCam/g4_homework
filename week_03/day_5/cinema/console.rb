@@ -37,6 +37,14 @@ film4.save()
 film5.save()
 film6.save()
 
+# UPDATE  --  DATA IN TABLES
+customer1.name = 'Mary Williams'
+customer1.update()
+
+film5.title = 'Insidious'
+film5.update()
+
+# PURCHASE SOME TICKETS
 ticket1 = Ticket.new ({'customer_id' => customer1.id, 'film_id' => film1.id})
 ticket2 = Ticket.new ({'customer_id' => customer2.id, 'film_id' => film1.id})
 ticket3 = Ticket.new ({'customer_id' => customer3.id, 'film_id' => film4.id})
@@ -63,12 +71,7 @@ all_customers = Customer.all()
 all_films = Film.all()
 all_tickets = Ticket.all()
 
-# UPDATE  --  DATA IN TABLES
-customer1.name = 'Mary Williams'
-customer1.update()
 
-film5.title = 'Insidious'
-film5.update()
 
 # FETCH ALL FILMS FOR GIVEN CUSTOMER
 cust4_films = customer4.films()
