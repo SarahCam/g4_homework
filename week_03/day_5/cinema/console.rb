@@ -49,6 +49,7 @@ ticket1.save()
 ticket2.save()
 ticket3.save()
 ticket4.save()
+ticket5.save()
 
 # READ    --  DATA FROM TABLES
 
@@ -63,6 +64,10 @@ customer1.update()
 
 film5.title = 'Insidious'
 film5.update()
+
+# FETCH ALL FILMS FOR GIVEN CUSTOMER
+
+cust4_films =customer4.films()
 
 binding.pry
 nil
