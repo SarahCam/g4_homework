@@ -47,7 +47,8 @@ film5.title = 'Insidious'
 film5.update()
 
 # ADD SOME screenings
-screening1 = Screening.new ({'start_time' => '01-FEB-2018 14:30', 'end_time' => '01-FEB-2018 16:00', 'film_id' => film1.id})
+screening1 = Screening.new ({'start_time' => '01-FEB-2018 14:30', 'end_time' => '01-FEB-2018 16:00',
+                             'film_id' => film1.id, 'seats' => 5})
 screening1.save()
 
 # PURCHASE SOME TICKETS
@@ -59,6 +60,7 @@ ticket5 = Ticket.new ({'customer_id' => customer4.id, 'film_id' => film1.id, 'sc
 
 ticket1.save()
 ticket1.charge_customer()
+ticket1.book_seat()
 
 ticket2.save()
 ticket2.charge_customer()

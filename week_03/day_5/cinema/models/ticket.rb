@@ -29,10 +29,22 @@ class Ticket
     return Film.new(film[0])
   end
 
+  def get_screening()
+    sql = "SELECT * FROM screenings WHERE id = $1"
+    values = [@screening_id]
+    screening = SqlRunner.run(sql, values)
+    return Screening.new(screening[0])
+  end
+
   def charge_customer()
     price = get_film().price
     customer = get_customer
     customer.decrease_funds(price)
+  end
+
+  def book_seat()
+    screening = get_screening
+    screening.reserve_seat()
   end
 
  # CREATE

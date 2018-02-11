@@ -15,11 +15,16 @@ class Screening
     @seats = options['seats'].to_i
   end
 
-  def film
+  def film()
     sql = "SELECT * FROM films WHERE id = $1"
     values = [@film_id]
     film = SqlRunner.run(sql, values)[0]
     return Film.new(film)
+  end
+
+  def reserve_seat()
+    @seats -= 1
+    update()
   end
 
  # CREATE

@@ -59,4 +59,9 @@ class ScreeningTest < MiniTest::Test
     assert_equal(10, @screening1.seats)
   end
 
+  def test_reserve_seat
+    @screening1.reserve_seat()
+    assert_equal(9, @screening1.seats)
+  end
+
 end
