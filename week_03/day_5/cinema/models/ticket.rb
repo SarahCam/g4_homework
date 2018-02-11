@@ -34,9 +34,6 @@ class Ticket
     values = [@customer_id, @film_id]
     save = SqlRunner.run(sql, values)
     @id = save[0]['id'].to_i
-    customer = get_customer()
-    film = get_film()
-    # customer.decrease_funds(film.price)
   end
 
   # UPDATE

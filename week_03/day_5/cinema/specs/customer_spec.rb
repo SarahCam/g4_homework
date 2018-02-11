@@ -27,4 +27,9 @@ class CustomerTest < MiniTest::Test
     assert_equal(2, @customer1.films().count)
   end
 
+  def test_decrease_funds__4
+    @customer1.decrease_funds(4)
+    assert_equal(16, @customer1.funds)
+  end
+
 end

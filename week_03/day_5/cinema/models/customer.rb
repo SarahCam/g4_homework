@@ -13,6 +13,11 @@ class Customer
     @funds = options['funds'].to_f
   end
 
+  def decrease_funds(amount)
+    @funds -= amount
+    update()
+  end
+
  # CREATE
   def save()
     sql = "INSERT INTO customers (name, funds) VALUES ($1, $2) RETURNING id"
