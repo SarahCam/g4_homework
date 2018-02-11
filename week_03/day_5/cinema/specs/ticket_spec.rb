@@ -20,7 +20,7 @@ class TicketTest < MiniTest::Test
     @film1.save()
 
     @screening1 = Screening.new ({'start_time' => '01-FEB-2018 14:30', 'end_time' => '01-FEB-2018 16:00',
-                                  'film_id' => @film1.id, 'max_seats' => 10})
+                                  'film_id' => @film1.id, 'seats' => 10})
     @screening1.save()
 
     @ticket1 = Ticket.new ({'customer_id' => @customer1.id, 'film_id' => @film1.id, 'screening_id' => @screening1.id})
