@@ -4,13 +4,11 @@ require_relative('models/film')
 require_relative('models/ticket')
 
 # DELETE  --  DATA FROM TABLES
-
 Customer.delete_all()
 Film.delete_all()
 Ticket.delete_all()
 
 # CREATE  --  DATA IN TABLES
-
 customer1 = Customer.new ({'name' => 'Veronica Page', 'funds' => 3.50})
 customer2 = Customer.new ({'name' => 'Albert Dodds', 'funds' => 6})
 customer3 = Customer.new ({'name' => 'Sally Smith', 'funds' => 7})
@@ -52,13 +50,11 @@ ticket4.save()
 ticket5.save()
 
 # READ    --  DATA FROM TABLES
-
 all_customers = Customer.all()
 all_films = Film.all()
 all_tickets = Ticket.all()
 
 # UPDATE  --  DATA IN TABLES
-
 customer1.name = 'Mary Williams'
 customer1.update()
 
@@ -66,8 +62,10 @@ film5.title = 'Insidious'
 film5.update()
 
 # FETCH ALL FILMS FOR GIVEN CUSTOMER
+cust4_films = customer4.films()
 
-cust4_films =customer4.films()
+# FETCH ALL CUSTOMERS FOR GIVEN FILM
+film1_custs = film1.customers()
 
 binding.pry
 nil
