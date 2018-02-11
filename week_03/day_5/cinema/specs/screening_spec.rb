@@ -55,8 +55,4 @@ class ScreeningTest < MiniTest::Test
     assert_equal('Godzilla', @screening1.film().title)
   end
 
-  def test_get_popular_start_time
-    
-  end
-
 end

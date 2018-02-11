@@ -49,4 +49,11 @@ class Screening
     return screenings.map { |screening| Screening.new(screening) }
   end
 
+  def self.find_by_id(id)
+    sql = "SELECT * FROM screenings WHERE id = $1"
+    values = [id]
+    screening = SqlRunner.run(sql, values)[0]
+    return Screening.new(screening)
+  end
+
 end

@@ -43,6 +43,22 @@ class Film
     return customers.map { |customer| Customer.new(customer) }
   end
 
+  def tickets()
+    sql = "SELECT * FROM tickets WHERE film_id = $1"
+    values = [@id]
+    tickets = SqlRunner.run(sql, values)
+    return tickets.map { |ticket| Ticket.new(ticket) }
+  end
+
+  def popular_time()
+    count = Hash.new(0)                                           # Create a new hash array to store counts
+    tickets().each { |ticket| count[ticket.screening_id] += 1 }   # For each ticket, increment the total counts for it's screening and store in the screenings array
+    screenings = count.sort_by { |key, value| value }             # Sort into order, from lowest to highest counts
+    most_popular = screenings.last().first()                      # Get the first array item (the key - screening_id) from the last entry in the screenings array
+    screening = Screening.find_by_id(most_popular)
+    return screening.start_time
+  end
+
   # DELETE
   def self.delete_all()
     sql = "DELETE FROM films"
