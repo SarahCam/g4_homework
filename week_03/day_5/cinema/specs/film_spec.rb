@@ -23,8 +23,8 @@ class FilmTest < MiniTest::Test
     @film1.save()
     @film2.save()
 
-    @screening1 = Screening.new ({'start_time' => '01-FEB-2018 14:30', 'end_time' => '01-FEB-2018 16:00', 'film_id' => @film1.id})
-    @screening2 = Screening.new ({'start_time' => '01-FEB-2018 16:30', 'end_time' => '01-FEB-2018 18:00', 'film_id' => @film1.id})
+    @screening1 = Screening.new ({'start_time' => '01-FEB-2018 14:30', 'end_time' => '01-FEB-2018 16:00', 'film_id' => @film1.id, 'max_seats' => 10})
+    @screening2 = Screening.new ({'start_time' => '01-FEB-2018 16:30', 'end_time' => '01-FEB-2018 18:00', 'film_id' => @film1.id, 'max_seats' => 10})
     @screening1.save()
     @screening2.save()
 

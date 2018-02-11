@@ -25,10 +25,10 @@ class ScreeningTest < MiniTest::Test
     @anna.save()
 
     @screening1 = Screening.new({'start_time' => '01-FEB-2018 12:30','end_time' => '01-FEB-2018 14:00',
-                                 'film_id' => @godzilla.id})
+                                 'film_id' => @godzilla.id, 'max_seats' => 10})
 
     @screening2 = Screening.new({'start_time' => '01-FEB-2018 17:30','end_time' => '01-FEB-2018 19:00',
-                                 'film_id' => @godzilla.id})
+                                 'film_id' => @godzilla.id, 'max_seats' => 10})
     @screening1.save()
     @screening2.save()
 

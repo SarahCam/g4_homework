@@ -55,8 +55,8 @@ class Film
     tickets().each { |ticket| count[ticket.screening_id] += 1 }   # For each ticket, increment the total counts for it's screening and store in the screenings array
     screenings = count.sort_by { |key, value| value }             # Sort into order, from lowest to highest counts
     most_popular = screenings.last().first()                      # Get the first array item (the key - screening_id) from the last entry in the screenings array
-    screening = Screening.find_by_id(most_popular)
-    return screening.start_time
+    screening = Screening.find_by_id(most_popular)                # Get back an instance of that screening, given it's id
+    return screening.start_time                                   # Return back the start_time property
   end
 
   # DELETE
