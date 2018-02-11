@@ -1,5 +1,7 @@
 require('pry')
 require_relative('../db/sql_runner')
+require_relative('customer')
+require_relative('film')
 
 class Ticket
 
@@ -12,12 +14,29 @@ class Ticket
     @film_id = options['film_id'].to_i
   end
 
+  def get_customer()
+    sql = "SELECT * FROM customers WHERE id = $1"
+    values = [@customer_id]
+    customer = SqlRunner.run(sql, values)
+    return Customer.new(customer[0])
+  end
+
+  def get_film()
+    sql = "SELECT * FROM films WHERE id = $1"
+    values = [@film_id]
+    film = SqlRunner.run(sql, values)
+    return Film.new(film[0])
+  end
+
  # CREATE
   def save()
     sql = "INSERT INTO tickets (customer_id, film_id) VALUES ($1, $2) RETURNING id"
     values = [@customer_id, @film_id]
     save = SqlRunner.run(sql, values)
     @id = save[0]['id'].to_i
+    customer = get_customer()
+    film = get_film()
+    # customer.decrease_funds(film.price)
   end
 
   # UPDATE
