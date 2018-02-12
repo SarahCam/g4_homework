@@ -12,6 +12,10 @@ class TestGame < Minitest::Test
     @game4 = Game.new("scissors", "rock")
     @game5 = Game.new("rock", "paper")
     @game6 = Game.new("paper", "scissors")
+
+    @game7 = Game.new("scissors", "scissors")
+    @game8 = Game.new("rock", "rock")
+    @game9 = Game.new("paper", "paper")
   end
 
   def test_result___rock_scissors
@@ -39,15 +43,15 @@ class TestGame < Minitest::Test
   end
 
   def test_result___scissors_scissors
-    assert_equal("tie", @game4.result())
+    assert_equal("tie", @game7.result())
   end
 
   def test_result___rock_rock
-    assert_equal("tie", @game5.result())
+    assert_equal("tie", @game8.result())
   end
 
   def test_result___paper_paper
-    assert_equal("tie", @game6.result())
+    assert_equal("tie", @game9.result())
   end
 
 end

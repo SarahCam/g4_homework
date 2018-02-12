@@ -12,6 +12,8 @@ class Game
        (@hand1 == "rock" && @hand2 == "paper") ||
        (@hand1 == "paper" && @hand2 == "scissors")
       return @hand2
+    elsif (@hand1 == @hand2)
+      return "tie"
     else
       return @hand1
     end

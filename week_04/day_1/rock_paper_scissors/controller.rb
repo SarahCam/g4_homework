@@ -10,33 +10,3 @@ get'/:hand1/:hand2' do
   @winner = game.result()
   erb(:result)
 end
-
-# get '/rock/scissors' do
-#   @winner = "Rock"
-#   erb(:result)
-# end
-#
-# get '/scissors/rock' do
-#   @winner = "Rock"
-#   erb(:result)
-# end
-#
-# get '/rock/paper' do
-#   @winner = "Paper"
-#   erb(:result)
-# end
-#
-# get '/paper/rock' do
-#   @winner = "Paper"
-#   erb(:result)
-# end
-#
-# get '/scissors/paper' do
-#   @winner = "Scissors"
-#   erb(:result)
-# end
-#
-# get '/paper/scissors' do
-#   @winner = "Scissors"
-#   erb(:result)
-# end
