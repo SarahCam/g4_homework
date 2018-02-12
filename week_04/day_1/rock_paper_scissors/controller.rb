@@ -10,6 +10,7 @@ get '/rules' do
   erb(:rules)
 end
 
+
 get'/:hand1/:hand2' do
   hand1 = params[:hand1]
   hand2 = params[:hand2]
