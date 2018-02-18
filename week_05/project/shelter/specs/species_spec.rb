@@ -17,10 +17,4 @@ class SpeciesTest < MiniTest::Test
     assert_equal("cat", @cat.name)
   end
 
-  def test_save
-    @dog.save()
-    @cat.save()
-    @snake.save()
-  end
-
 end

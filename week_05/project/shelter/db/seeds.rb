@@ -1,20 +1,20 @@
 require('pry')
 require_relative('../models/species')
 
-# DELETE  --  DATA FROM TABLES
+# DELETE SPECIES
 Species.delete_all()
 
-
-# CREATE  --  DATA IN TABLES
+# CREATE & SAVE SPECIES
 dog = Species.new ({ 'name' => 'dog' })
-cat = Species.new ({ 'name' => 'cat' })
-rabbit = Species.new ({ 'name' => 'rabbit' })
-
-
-# SAVE  --  DATA IN TABLES
 dog.save()
+cat = Species.new ({ 'name' => 'cat' })
 cat.save()
+rabbit = Species.new ({ 'name' => 'rabbit' })
 rabbit.save()
+snake = Species.new ({ 'name' => 'snake' })
+snake.save()
+bird = Species.new ({ 'name' => 'bird' })
+bird.save()
 
 binding.pry
 nil
