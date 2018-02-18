@@ -17,4 +17,9 @@ class Species
     @id = save.first()['id'].to_i
   end
 
+  def self.delete_all()
+    sql = "DELETE FROM species"
+    SqlRunner.run(sql)
+  end
+
 end
