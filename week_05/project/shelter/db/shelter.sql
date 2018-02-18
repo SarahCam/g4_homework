@@ -2,9 +2,9 @@ DROP TABLE IF EXISTS adoptions;
 DROP TABLE IF EXISTS owners;
 DROP TABLE IF EXISTS animals;
 DROP TABLE IF EXISTS breeds;
-DROP TABLE IF EXISTS types;
+DROP TABLE IF EXISTS species;
 
-CREATE TABLE types (
+CREATE TABLE species (
   id SERIAL PRIMARY KEY,
   name VARCHAR(255) NOT NULL
 );
@@ -12,13 +12,13 @@ CREATE TABLE types (
 CREATE TABLE breeds (
   id SERIAL PRIMARY KEY,
   name VARCHAR(255) NOT NULL,
-  type_id INT REFERENCES types(id)
+  species_id INT REFERENCES species(id)
 );
 
 CREATE TABLE animals (
   id SERIAL PRIMARY KEY,
   name VARCHAR(255),
-  type_id INT REFERENCES types(id),
+  species_id INT REFERENCES species(id),
   breed_id INT REFERENCES breeds(id),
   gender VARCHAR(255),
   age INT,
@@ -37,7 +37,7 @@ CREATE TABLE owners (
   email VARCHAR(255),
   address VARCHAR(255),
   postcode VARCHAR(255),
-  type_id INT REFERENCES types(id),
+  species_id INT REFERENCES species(id),
   breed_id INT REFERENCES breeds(id),
   seeks_pet BOOLEAN NOT NULL,
   registration_date DATE NOT NULL
