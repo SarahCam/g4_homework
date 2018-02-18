@@ -1,0 +1,31 @@
+DROP TABLE IF EXISTS adoptions;
+DROP TABLE IF EXISTS owners;
+DROP TABLE IF EXISTS animals;
+DROP TABLE IF EXISTS breeds;
+DROP TABLE IF EXISTS types;
+
+CREATE TABLE types (
+  id SERIAL PRIMARY KEY,
+  type VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE breeds (
+  id SERIAL PRIMARY KEY,
+  breed VARCHAR(255) NOT NULL,
+  type INT REFERENCES types(id)
+);
+
+CREATE TABLE animals (
+  id SERIAL PRIMARY KEY
+
+);
+
+CREATE TABLE owners (
+  id SERIAL PRIMARY KEY
+
+);
+
+CREATE TABLE adoptions (
+  id SERIAL PRIMARY KEY
+
+);
