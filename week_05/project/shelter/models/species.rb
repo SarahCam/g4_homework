@@ -1,7 +1,7 @@
-require('../db/sql_runner')
 require('pry')
+require_relative('../db/sql_runner')
 
-class Type
+class Species
 
   attr_reader :id, :name
 
