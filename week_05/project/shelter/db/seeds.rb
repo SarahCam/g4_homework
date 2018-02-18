@@ -19,6 +19,7 @@ bird.save()
 
 # CREATE & SAVE DOG BREEDS
 dog_1 = Breed.new({ "species_id" => dog.id, "name" => "mongrel"})
+dog_1.save()
 dog_2 = Breed.new({ "species_id" => dog.id, "name" => "collie"})
 dog_3 = Breed.new({ "species_id" => dog.id, "name" => "labrador"})
 dog_4 = Breed.new({ "species_id" => dog.id, "name" => "spaniel"})
