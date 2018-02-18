@@ -2,7 +2,9 @@ require('pry')
 require_relative('../models/species')
 require_relative('../models/breed')
 
-# DELETE SPECIES
+
+# DELETE BREEDS & SPECIES
+Breed.delete_all()
 Species.delete_all()
 
 # CREATE & SAVE ANIMAL SPECIES
