@@ -1,3 +1,14 @@
 body {
   background-color: #FFF0F5;
 }
+
+p {
+  font-style: oblique;
+  font-family: serif;
+}
+
+h1 {
+  font-style: normal;
+  font-family: sans-serif;
+  font-size: 100;
+}
