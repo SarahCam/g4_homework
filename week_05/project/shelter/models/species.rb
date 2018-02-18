@@ -10,4 +10,11 @@ class Species
     @name = options['name']
   end
 
+  def save()
+    sql = "INSERT INTO species (name) VALUES ($1) RETURNING id"
+    values = [@name]
+    save = SqlRunner.run(sql, values)
+    @id = save.first()['id'].to_i
+  end
+
 end
