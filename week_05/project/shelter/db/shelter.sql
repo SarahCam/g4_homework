@@ -16,13 +16,31 @@ CREATE TABLE breeds (
 );
 
 CREATE TABLE animals (
-  id SERIAL PRIMARY KEY
-
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(255),
+  type INT REFERENCES types(id),
+  breed INT REFERENCES breeds(id),
+  gender VARCHAR(255),
+  age INT,
+  photo VARCHAR(255),
+  healthy BOOLEAN,
+  safe BOOLEAN,
+  adopted BOOLEAN NOT NULL,
+  admission_date DATE NOT NULL
 );
 
 CREATE TABLE owners (
-  id SERIAL PRIMARY KEY
-
+  id SERIAL PRIMARY KEY,
+  first_name VARCHAR(255) NOT NULL,
+  last_name VARCHAR(255) NOT NULL,
+  telephone INT NOT NULL,
+  email VARCHAR(255),
+  address VARCHAR(255),
+  postcode VARCHAR(255),
+  type_choice INT REFERENCES types(id),
+  breed_choice INT REFERENCES breeds(id),
+  seeks_pet BOOLEAN NOT NULL,
+  registration_date DATE NOT NULL
 );
 
 CREATE TABLE adoptions (
