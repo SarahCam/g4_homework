@@ -44,6 +44,8 @@ CREATE TABLE owners (
 );
 
 CREATE TABLE adoptions (
-  id SERIAL PRIMARY KEY
-
+  id SERIAL PRIMARY KEY,
+  animal_id INT REFERENCES animals(id) NOT NULL,
+  owner_id INT REFERENCES owners(id) NOT NULL,
+  adoption_date DATE NOT NULL
 );
