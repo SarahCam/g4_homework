@@ -20,4 +20,18 @@ class Animal
     @admission_date = options['admission_date']  # CAST TO DATE
   end
 
+  def save()
+    sql = "INSERT INTO animals (name, species_id, breed_id, gender, age, photo, healthy, safe, adopted, admission_date)
+           VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)
+           RETURNING id"
+    values = [@name, @species_id, @breed_id, @gender, @age, @photo, @healthy, @safe, @adopted, @admission_date]
+    save = SqlRunner.run(sql, values)
+    @id = save.first()['id'].to_i
+  end
+
+  def self.delete_all()
+    sql = "DELETE FROM animals"
+    SqlRunner.run(sql)
+  end
+
 end

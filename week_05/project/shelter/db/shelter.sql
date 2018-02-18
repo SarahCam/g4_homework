@@ -20,12 +20,12 @@ CREATE TABLE animals (
   name VARCHAR(255),
   species_id INT REFERENCES species(id),
   breed_id INT REFERENCES breeds(id),
-  gender VARCHAR(255),
+  gender VARCHAR(32),
   age INT,
   photo VARCHAR(255),
-  healthy BOOLEAN,
-  safe BOOLEAN,
-  adopted BOOLEAN NOT NULL,
+  healthy VARCHAR(32),  -- CHANGE TO BOOLEAN
+  safe VARCHAR(32),  -- CHANGE TO BOOLEAN
+  adopted VARCHAR(32) NOT NULL,  -- CHANGE TO BOOLEAN
   admission_date DATE NOT NULL
 );
 

@@ -1,9 +1,12 @@
 require('pry')
+require('date')
 require_relative('../models/species')
 require_relative('../models/breed')
+require_relative('../models/animal')
 
 
-# DELETE BREEDS & SPECIES
+# DELETE ANIMALS, BREEDS & SPECIES
+Animal.delete_all()
 Breed.delete_all()
 Species.delete_all()
 
@@ -38,6 +41,21 @@ cat_3 = Breed.new({ "species_id" => cat.id, "name" => "black"})
 cat_3.save()
 cat_4 = Breed.new({ "species_id" => cat.id, "name" => "tortoiseshell"})
 cat_4.save()
+
+# CREATE ANIMALS
+animal_1 = Animal.new({ "name" => "Harry",
+                        "species_id" => dog.id,
+                        "breed_id" => dog_1.id,
+                        "gender" => "M",
+                        "age" => 7,
+                        "photo" => "harry.jpg",
+                        "healthy" => "Y",
+                        "safe" => "N",
+                        "adopted" => "N",
+                        "admission_date" => DateTime.new(2018,1,22).to_s
+                      })
+animal_1.save()
+
 
 binding.pry
 nil
