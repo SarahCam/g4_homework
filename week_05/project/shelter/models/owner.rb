@@ -51,26 +51,26 @@ class Owner
   #   values = [@name, @species, @breed, @gender, @age, @photo, @healthy, @safe, @adopted, @admission_date, @id]
   #   SqlRunner.run(sql,values)
   # end
-  #
-  # def self.find_by_id(id)
-  #   sql = "SELECT * FROM animals WHERE id = $1"
-  #   values = [id]
-  #   result = SqlRunner.run(sql, values).first()
-  #   return Animal.new(result)
-  # end
-  #
-  # def self.find_by_name(name)
-  #   sql = "SELECT * FROM animals WHERE name = $1"
-  #   values = [name]
-  #   result = SqlRunner.run(sql, values).first()
-  #   return Animal.new(result)
-  # end
-  #
-  # def self.find_all()
-  #   sql = "SELECT * FROM animals"
-  #   results = SqlRunner.run(sql)
-  #   return results.map { |result| Animal.new(result) }
-  # end
+
+  def self.find_by_id(id)
+    sql = "SELECT * FROM owners WHERE id = $1"
+    values = [id]
+    result = SqlRunner.run(sql, values).first()
+    return Owner.new(result)
+  end
+
+  def self.find_by_first_name(first_name)
+    sql = "SELECT * FROM owners WHERE first_name = $1"
+    values = [first_name]
+    result = SqlRunner.run(sql, values).first()
+    return Owner.new(result)
+  end
+
+  def self.find_all()
+    sql = "SELECT * FROM owners"
+    results = SqlRunner.run(sql)
+    return results.map { |result| Owner.new(result) }
+  end
 
   def self.delete_all()
     sql = "DELETE FROM owners"
