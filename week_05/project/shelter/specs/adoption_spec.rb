@@ -130,29 +130,16 @@ class AdoptionTest < MiniTest::Test
     assert_equal(@owner_1.id, Adoption.find_by_owner_id(@owner_1.id).owner_id)
   end
 
+  def test_delete___2
+    @adoption_3.delete()
+    assert_equal(2, Adoption.find_all().count())
+  end
 
-  # def test_delete___2
-  #   @owner_3.delete()
-  #   assert_equal(2, Owner.find_all().count())
-  # end
-  #
-  # def test_update__first_name___Charlie
-  #   @owner_2.first_name = "Charlie"
-  #   @owner_2.update()
-  #   assert_equal("Charlie", Owner.find_by_id(@owner_2.id).first_name)
-  # end
-  #
-  # def test_update__species___Snake
-  #   @owner_2.species = "Snake"
-  #   @owner_2.update()
-  #   assert_equal("Snake", Owner.find_by_id(@owner_2.id).species)
-  # end
-
-  # def test_update__gender___Moggy
-  #   @animal_2.gender = "Male"
-  #   @animal_2.update()
-  #   assert_equal("Male", Animal.find_by_id(@animal_2.id).gender)
-  # end
+  def test_update__animal_id___owner_1__animal_2
+    @adoption_1.animal_id = @animal_2.id
+    @adoption_1.update()
+    assert_equal(@animal_2.id, Adoption.find_by_owner_id(@owner_1.id).animal_id)
+  end
 
   # def test_update__admission_date___Moggy
   #   new_date = DateTime.new(2018,1,10).to_s

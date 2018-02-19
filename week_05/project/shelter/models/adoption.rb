@@ -22,28 +22,21 @@ class Adoption
     @id = save.first()['id'].to_i
   end
 
-  # def delete()
-  #   sql = "DELETE FROM owners WHERE id = $1"
-  #   values = [@id]
-  #   SqlRunner.run(sql,values)
-  # end
-  #
-  # def update()
-  #   sql = "UPDATE owners
-  #          SET first_name = $1,
-  #              last_name = $2,
-  #              telephone = $3,
-  #              email = $4,
-  #              address = $5,
-  #              postcode = $6,
-  #              species = $7,
-  #              breed = $8,
-  #              seeks_pet = $9,
-  #              registration_date = $10
-  #          WHERE id = $11"
-  #   values = [@first_name, @last_name, @telephone, @email, @address, @postcode, @species, @breed, @seeks_pet, @registration_date, @id]
-  #   SqlRunner.run(sql,values)
-  # end
+  def delete()
+    sql = "DELETE FROM adoptions WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql,values)
+  end
+
+  def update()
+    sql = "UPDATE adoptions
+           SET animal_id = $1,
+               owner_id = $2,
+               adoption_date = $3
+           WHERE id = $4"
+    values = [@animal_id, @owner_id, @adoption_date, @id]
+    SqlRunner.run(sql,values)
+  end
 
   def self.find_by_animal_id(id)
     sql = "SELECT * FROM adoptions WHERE animal_id = $1"
