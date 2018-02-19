@@ -12,6 +12,10 @@ class AdoptionTest < MiniTest::Test
 
   def setup
 
+    # DELETE ADOPTIONS
+    Adoption.delete_all()
+    # DELETE OWNERS
+    Owner.delete_all()
     # DELETE ANIMALS
     Animal.delete_all()
 
@@ -53,9 +57,6 @@ class AdoptionTest < MiniTest::Test
                           })
     @animal_3.save()
 
-    # DELETE OWNERS
-    Owner.delete_all()
-
     # CREATE OWNERS
     @owner_1 = Owner.new({  "first_name" => "Bill",
                             "last_name" => "Wardlaw",
@@ -94,14 +95,22 @@ class AdoptionTest < MiniTest::Test
                           })
     @owner_3.save()
 
-    # DELETE ADOPTIONS
-    # Adoption.delete_all()
-
+    # CREATE ADOPTIONS
     @adoption_1 = Adoption.new({  "animal_id" => @animal_1.id,
                                   "owner_id" => @owner_1.id,
                                   "adoption_date" => DateTime.new(2018,2,14).to_s
                           })
     @adoption_1.save()
+    @adoption_2 = Adoption.new({  "animal_id" => @animal_2.id,
+                                  "owner_id" => @owner_2.id,
+                                  "adoption_date" => DateTime.new(2018,2,15).to_s
+                          })
+    @adoption_2.save()
+    @adoption_3 = Adoption.new({  "animal_id" => @animal_3.id,
+                                  "owner_id" => @owner_3.id,
+                                  "adoption_date" => DateTime.new(2018,2,16).to_s
+                          })
+    @adoption_3.save()
 
   end
 
@@ -109,18 +118,19 @@ class AdoptionTest < MiniTest::Test
     assert_equal(DateTime.new(2018,2,14).to_s, @adoption_1.adoption_date)
   end
 
-  # def test_find_all___3
-  #   assert_equal(3, Owner.find_all().count())
-  # end
-  #
-  # def test_find_by_id___Bill
-  #   assert_equal("Bill", Owner.find_by_id(@owner_1.id).first_name)
-  # end
-  #
-  # def test_find_by_first_name___Bill
-  #   assert_equal("Bill", Owner.find_by_first_name(@owner_1.first_name).first_name)
-  # end
-  #
+  def test_find_all___3
+    assert_equal(3, Adoption.find_all().count())
+  end
+
+  def test_find_by_animal_id___animal_1
+    assert_equal(@animal_1.id, Adoption.find_by_animal_id(@animal_1.id).animal_id)
+  end
+
+  def test_find_by_owner_id___owner_1
+    assert_equal(@owner_1.id, Adoption.find_by_owner_id(@owner_1.id).owner_id)
+  end
+
+
   # def test_delete___2
   #   @owner_3.delete()
   #   assert_equal(2, Owner.find_all().count())

@@ -8,8 +8,8 @@ class Adoption
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
-    @animal_id = options['animal_id']
-    @owner_id = options['owner_id']
+    @animal_id = options['animal_id'].to_i
+    @owner_id = options['owner_id'].to_i
     @adoption_date = options['adoption_date']
   end
 
@@ -44,30 +44,30 @@ class Adoption
   #   values = [@first_name, @last_name, @telephone, @email, @address, @postcode, @species, @breed, @seeks_pet, @registration_date, @id]
   #   SqlRunner.run(sql,values)
   # end
-  #
-  # def self.find_by_id(id)
-  #   sql = "SELECT * FROM owners WHERE id = $1"
-  #   values = [id]
-  #   result = SqlRunner.run(sql, values).first()
-  #   return Owner.new(result)
-  # end
-  #
-  # def self.find_by_first_name(first_name)
-  #   sql = "SELECT * FROM owners WHERE first_name = $1"
-  #   values = [first_name]
-  #   result = SqlRunner.run(sql, values).first()
-  #   return Owner.new(result)
-  # end
-  #
-  # def self.find_all()
-  #   sql = "SELECT * FROM owners"
-  #   results = SqlRunner.run(sql)
-  #   return results.map { |result| Owner.new(result) }
-  # end
-  #
-  # def self.delete_all()
-  #   sql = "DELETE FROM owners"
-  #   SqlRunner.run(sql)
-  # end
+
+  def self.find_by_animal_id(id)
+    sql = "SELECT * FROM adoptions WHERE animal_id = $1"
+    values = [id]
+    result = SqlRunner.run(sql, values).first()
+    return Adoption.new(result)
+  end
+
+  def self.find_by_owner_id(id)
+    sql = "SELECT * FROM adoptions WHERE owner_id = $1"
+    values = [id]
+    result = SqlRunner.run(sql, values).first()
+    return Adoption.new(result)
+  end
+
+  def self.find_all()
+    sql = "SELECT * FROM adoptions"
+    results = SqlRunner.run(sql)
+    return results.map { |result| Adoption.new(result) }
+  end
+
+  def self.delete_all()
+    sql = "DELETE FROM adoptions"
+    SqlRunner.run(sql)
+  end
 
 end
