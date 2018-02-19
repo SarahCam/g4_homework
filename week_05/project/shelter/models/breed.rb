@@ -35,16 +35,21 @@ class Breed
     sql = "SELECT * FROM breeds WHERE id = $1"
     values = [id]
     result = SqlRunner.run(sql, values).first()
-    return Species.new(result)
+    return Breed.new(result)
   end
 
   def self.find_by_name(name)
     sql = "SELECT * FROM breeds WHERE name = $1"
     values = [name]
     result = SqlRunner.run(sql, values).first()
-    return Species.new(result)
+    return Breed.new(result)
   end
 
+  def self.find_all()
+    sql = "SELECT * FROM breeds"
+    results = SqlRunner.run(sql)
+    return results.map { |result| Breed.new(result) }
+  end
 
   def self.delete_all()
     sql = "DELETE FROM breeds"

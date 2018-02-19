@@ -44,6 +44,12 @@ class Species
     return Species.new(result)
   end
 
+  def self.find_all()
+    sql = "SELECT * FROM species"
+    results = SqlRunner.run(sql)
+    return results.map { |result| Species.new(result) }
+  end
+
   def self.delete_all()
     sql = "DELETE FROM species"
     SqlRunner.run(sql)
