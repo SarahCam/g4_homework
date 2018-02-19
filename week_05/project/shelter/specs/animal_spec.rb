@@ -53,36 +53,36 @@ class AnimalTest < MiniTest::Test
     @animal_1 = Animal.new({ "name" => "Harry",
                             "species_id" => @dog.id,
                             "breed_id" => @dog_1.id,
-                            "gender" => "M",
+                            "gender" => "Male",
                             "age" => 7,
                             "photo" => "harry.jpg",
-                            "healthy" => "Y",
-                            "safe" => "N",
-                            "adopted" => "N",
+                            "healthy" => "Yes",
+                            "safe" => "No",
+                            "adopted" => false,
                             "admission_date" => DateTime.new(2018,1,22).to_s
                           })
     @animal_1.save()
     @animal_2 = Animal.new({ "name" => "Mog",
                             "species_id" => @cat.id,
                             "breed_id" => @cat_1.id,
-                            "gender" => "F",
+                            "gender" => "Female",
                             "age" => 4,
                             "photo" => "mog.jpg",
-                            "healthy" => "N",
-                            "safe" => "Y",
-                            "adopted" => "N",
+                            "healthy" => "No",
+                            "safe" => "Yes",
+                            "adopted" => false,
                             "admission_date" => DateTime.new(2018,2,3).to_s
                           })
     @animal_2.save()
     @animal_3 = Animal.new({ "name" => "Blue",
                             "species_id" => @dog.id,
                             # "breed_id" => @dog_1.id,
-                            "gender" => "M",
+                            # "gender" => "Male",
                             # "age" => 2,
                             # "photo" => "mog.jpg",
-                            # "healthy" => "N",
-                            # "safe" => "Y",
-                            "adopted" => "N",
+                            "healthy" => "No",
+                            "safe" => "Check",
+                            "adopted" => false,
                             "admission_date" => DateTime.new(2018,2,11).to_s
                           })
     @animal_3.save()
@@ -122,9 +122,9 @@ class AnimalTest < MiniTest::Test
   end
 
   def test_update__gender___Moggy
-    @animal_2.gender = "M"
+    @animal_2.gender = "Male"
     @animal_2.update()
-    assert_equal("M", Animal.find_by_id(@animal_2.id).gender)
+    assert_equal("Male", Animal.find_by_id(@animal_2.id).gender)
   end
 
   # def test_update__admission_date___Moggy
