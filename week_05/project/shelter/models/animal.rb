@@ -4,13 +4,13 @@ require_relative('../db/sql_runner')
 class Animal
 
   attr_reader :id
-  attr_accessor :name, :species_id, :breed_id, :gender, :age, :photo, :healthy, :safe, :adopted, :admission_date
+  attr_accessor :name, :species, :breed, :gender, :age, :photo, :healthy, :safe, :adopted, :admission_date
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @name = options['name'] if options['name']
-    @species_id = options['species_id'].to_i if options['species_id']
-    @breed_id = options['breed_id'].to_i if options['breed_id']
+    @species = options['species'] if options['species']
+    @breed = options['breed'] if options['breed']
     @gender = options['gender'] if options['gender']
     @age = options['age'].to_i if options['age']
     @photo = options['photo'] if options['photo']
@@ -21,10 +21,10 @@ class Animal
   end
 
   def save()
-    sql = "INSERT INTO animals (name, species_id, breed_id, gender, age, photo, healthy, safe, adopted, admission_date)
+    sql = "INSERT INTO animals (name, species, breed, gender, age, photo, healthy, safe, adopted, admission_date)
            VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)
            RETURNING id"
-    values = [@name, @species_id, @breed_id, @gender, @age, @photo, @healthy, @safe, @adopted, @admission_date]
+    values = [@name, @species, @breed, @gender, @age, @photo, @healthy, @safe, @adopted, @admission_date]
     save = SqlRunner.run(sql, values)
     @id = save.first()['id'].to_i
   end
@@ -38,8 +38,8 @@ class Animal
   def update()
     sql = "UPDATE animals
            SET name = $1,
-               species_id = $2,
-               breed_id = $3,
+               species = $2,
+               breed = $3,
                gender = $4,
                age = $5,
                photo = $6,
@@ -48,7 +48,7 @@ class Animal
                adopted = $9,
                admission_date = $10
            WHERE id = $11"
-    values = [@name, @species_id, @breed_id, @gender, @age, @photo, @healthy, @safe, @adopted, @admission_date, @id]
+    values = [@name, @species, @breed, @gender, @age, @photo, @healthy, @safe, @adopted, @admission_date, @id]
     SqlRunner.run(sql,values)
   end
 
