@@ -68,11 +68,11 @@ class OwnerTest < MiniTest::Test
     assert_equal("Bill", Owner.find_by_first_name(@owner_1.first_name).first_name)
   end
 
-  # def test_delete___2
-  #   @animal_3.delete()
-  #   assert_equal(2, Animal.find_all().count())
-  # end
-  #
+  def test_delete___2
+    @owner_3.delete()
+    assert_equal(2, Owner.find_all().count())
+  end
+
   # def test_update__name___Moggy
   #   @animal_2.name = "Moggy"
   #   @animal_2.update()
