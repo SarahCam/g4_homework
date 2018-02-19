@@ -11,7 +11,7 @@ class OwnerTest < MiniTest::Test
   def setup
 
     # DELETE OWNERS
-    # Owner.delete_all()
+    Owner.delete_all()
 
     # CREATE OWNERS
     @owner_1 = Owner.new({  "first_name" => "Bill",
@@ -25,7 +25,31 @@ class OwnerTest < MiniTest::Test
                             "seeks_pet" => true,
                             "registration_date" => DateTime.new(2018,2,18).to_s
                           })
-    # @owner_1.save()
+    @owner_1.save()
+    @owner_2 = Owner.new({  "first_name" => "Jemima",
+                            "last_name" => "Price",
+                            "telephone" => "01786 855294",
+                            "email" => "jemima.price@btinternet.com",
+                            "address" => "20 Main Street",
+                            "postcode" => "FK16 8FD",
+                            "species" => "Cat",
+                            "breed" => "Tabby",
+                            "seeks_pet" => true,
+                            "registration_date" => DateTime.new(2017,12,30).to_s
+                          })
+    @owner_2.save()
+    @owner_3 = Owner.new({  "first_name" => "Gavin",
+                            "last_name" => "Templeton",
+                            "telephone" => "01786 841050",
+                            # "email" => "gavin@ideas.com",
+                            # "address" => "???",
+                            # "postcode" => "???",
+                            "species" => "Snake",
+                            # "breed" => "No preference",
+                            "seeks_pet" => true,
+                            "registration_date" => DateTime.new(2018,1,3).to_s
+                          })
+    @owner_3.save()
   end
 
   def test_get_owner_first_name___Bill

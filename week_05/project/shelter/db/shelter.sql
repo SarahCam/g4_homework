@@ -59,7 +59,7 @@ CREATE TABLE owners (
   id              SERIAL PRIMARY KEY,
   first_name      VARCHAR(255) NOT NULL,
   last_name       VARCHAR(255) NOT NULL,
-  telephone       INT NOT NULL,
+  telephone       VARCHAR(255) NOT NULL,
   email           VARCHAR(255),
   address         VARCHAR(255),
   postcode        VARCHAR(255),

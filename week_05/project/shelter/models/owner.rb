@@ -3,21 +3,6 @@ require_relative('../db/sql_runner')
 
 class Owner
 
-  # CREATE TABLE owners (
-  #   id              SERIAL PRIMARY KEY,
-  #   first_name      VARCHAR(255) NOT NULL,
-  #   last_name       VARCHAR(255) NOT NULL,
-  #   telephone       INT NOT NULL,
-  #   email           VARCHAR(255),
-  #   address         VARCHAR(255),
-  #   postcode        VARCHAR(255),
-  #   species         species_type,
-  #   breed           VARCHAR(255),
-  #   seeks_pet       BOOLEAN NOT NULL,
-  #   registration_date DATE NOT NULL
-  # );
-
-
   attr_reader :id
   attr_accessor :first_name, :last_name, :telephone, :email, :address, :postcode, :species, :breed, :seeks_pet, :registration_date
 
@@ -35,15 +20,15 @@ class Owner
     @registration_date = options['registration_date']
   end
 
-  # def save()
-  #   sql = "INSERT INTO animals (name, species, breed, gender, age, photo, healthy, safe, adopted, admission_date)
-  #          VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)
-  #          RETURNING id"
-  #   values = [@name, @species, @breed, @gender, @age, @photo, @healthy, @safe, @adopted, @admission_date]
-  #   save = SqlRunner.run(sql, values)
-  #   @id = save.first()['id'].to_i
-  # end
-  #
+  def save()
+    sql = "INSERT INTO owners (first_name, last_name, telephone, email, address, postcode, species, breed, seeks_pet, registration_date)
+           VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)
+           RETURNING id"
+    values = [@first_name, @last_name, @telephone, @email, @address, @postcode, @species, @breed, @seeks_pet, @registration_date]
+    save = SqlRunner.run(sql, values)
+    @id = save.first()['id'].to_i
+  end
+
   # def delete()
   #   sql = "DELETE FROM animals WHERE id = $1"
   #   values = [@id]
@@ -86,10 +71,10 @@ class Owner
   #   results = SqlRunner.run(sql)
   #   return results.map { |result| Animal.new(result) }
   # end
-  #
-  # def self.delete_all()
-  #   sql = "DELETE FROM animals"
-  #   SqlRunner.run(sql)
-  # end
+
+  def self.delete_all()
+    sql = "DELETE FROM owners"
+    SqlRunner.run(sql)
+  end
 
 end
