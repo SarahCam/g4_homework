@@ -73,18 +73,18 @@ class OwnerTest < MiniTest::Test
     assert_equal(2, Owner.find_all().count())
   end
 
-  # def test_update__name___Moggy
-  #   @animal_2.name = "Moggy"
-  #   @animal_2.update()
-  #   assert_equal("Moggy", Animal.find_by_id(@animal_2.id).name)
-  # end
-  #
-  # def test_update__age___Moggy
-  #   @animal_2.age = 10
-  #   @animal_2.update()
-  #   assert_equal(10, Animal.find_by_id(@animal_2.id).age)
-  # end
-  #
+  def test_update__first_name___Charlie
+    @owner_2.first_name = "Charlie"
+    @owner_2.update()
+    assert_equal("Charlie", Owner.find_by_id(@owner_2.id).first_name)
+  end
+
+  def test_update__species___Snake
+    @owner_2.species = "Snake"
+    @owner_2.update()
+    assert_equal("Snake", Owner.find_by_id(@owner_2.id).species)
+  end
+
   # def test_update__gender___Moggy
   #   @animal_2.gender = "Male"
   #   @animal_2.update()

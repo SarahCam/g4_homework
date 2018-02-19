@@ -35,22 +35,22 @@ class Owner
     SqlRunner.run(sql,values)
   end
 
-  # def update()
-  #   sql = "UPDATE animals
-  #          SET name = $1,
-  #              species = $2,
-  #              breed = $3,
-  #              gender = $4,
-  #              age = $5,
-  #              photo = $6,
-  #              healthy = $7,
-  #              safe = $8,
-  #              adopted = $9,
-  #              admission_date = $10
-  #          WHERE id = $11"
-  #   values = [@name, @species, @breed, @gender, @age, @photo, @healthy, @safe, @adopted, @admission_date, @id]
-  #   SqlRunner.run(sql,values)
-  # end
+  def update()
+    sql = "UPDATE owners
+           SET first_name = $1,
+               last_name = $2,
+               telephone = $3,
+               email = $4,
+               address = $5,
+               postcode = $6,
+               species = $7,
+               breed = $8,
+               seeks_pet = $9,
+               registration_date = $10
+           WHERE id = $11"
+    values = [@first_name, @last_name, @telephone, @email, @address, @postcode, @species, @breed, @seeks_pet, @registration_date, @id]
+    SqlRunner.run(sql,values)
+  end
 
   def self.find_by_id(id)
     sql = "SELECT * FROM owners WHERE id = $1"
