@@ -12,14 +12,20 @@
 </aside>
 
 <main>
-    <p><%= @animal_details.name %></p>
-    <p><%= @animal_details.species %></p>
-    <p><%= @animal_details.breed %></p>
-    <p><%= @animal_details.gender %></p>
-    <p><%= @animal_details.age %></p>
-    <p><%= @animal_details.photo %></p>
-    <p><%= @animal_details.healthy %></p>
-    <p><%= @animal_details.safe %></p>
-    <p><%= @animal_details.adopted %></p>
-    <p><%= @animal_details.admission_date %></p>
+  <% if @animal_details %>
+  <form action="/animals/edit" method="post">
+    <input type='text' value="<%= @animal_details.name %>" name="name">
+    <input type='text' value="<%= @animal_details.species %>" name="species">
+    <input type='text' value="<%= @animal_details.breed %>" name="breed">
+    <input type='text' value="<%= @animal_details.gender %>" name="gender">
+    <input type='text' value="<%= @animal_details.age %>" name="age">
+    <input type='text' value="<%= @animal_details.photo %>" name="photo">
+    <input type='text' value="<%= @animal_details.healthy %>" name="healthy">
+    <input type='text' value="<%= @animal_details.safe %>" name="safe">
+    <input type='text' value="<%= @animal_details.adopted %>" name="adopted">
+    <input type='text' value="<%= @animal_details.admission_date %>" name="admission_date">
+    <input type='hidden' value="<%= @animal_details.id %>" name="id">
+    <input type='submit' value="Update Details">
+  </form>
+  <% end %>
 </main>
