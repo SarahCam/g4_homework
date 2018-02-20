@@ -14,10 +14,10 @@ class Animal
     @gender = options['gender'] if options['gender']
     @age = options['age'].to_i if options['age']
     @photo = options['photo'] if options['photo']
-    @healthy = options['healthy'] if options['healthy']  # CAST TO BOOLEAN
-    @safe = options['safe'] if options['safe']  # CAST TO BOOLEAN
-    @adopted = options['adopted']  # CAST TO BOOLEAN
-    @admission_date = options['admission_date']  # CAST TO DATE
+    @healthy = options['healthy'] if options['healthy']
+    @safe = options['safe'] if options['safe']
+    @adopted = options['adopted']
+    @admission_date = options['admission_date']  
   end
 
   def save()
