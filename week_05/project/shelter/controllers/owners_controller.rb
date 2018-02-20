@@ -2,9 +2,6 @@ require_relative('../models/owner')
 
 get '/owners' do
   @owners = Owner.find_all()
-  if !@owner_details
-    @owner_details = @owners.first()
-  end
   erb(:owners)
 end
 

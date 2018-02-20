@@ -12,6 +12,7 @@
 </aside>
 
 <main>
+  <% if @owner_details %>
   <form action="/owners/edit" method="post">
     <input type='text' value="<%= @owner_details.first_name %>" name="first_name">
     <input type='text' value="<%= @owner_details.last_name %>" name="last_name">
@@ -26,4 +27,5 @@
     <input type='hidden' value="<%= @owner_details.id %>" name="id">
     <input type='submit' value="Update Details">
   </form>
+  <% end %>
 </main>

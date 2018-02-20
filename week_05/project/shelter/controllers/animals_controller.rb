@@ -11,14 +11,6 @@ post '/animals' do
   erb(:animals)
 end
 
-# get '/animals/edit' do
-#   @animals = Animal.find_all()
-#   if !@animal_details
-#     @animal_details = @animals.first()
-#   end
-#   erb(:animals)
-# end
-
 post '/animals/edit' do
   animal = Animal.new(params)
   animal.update()
