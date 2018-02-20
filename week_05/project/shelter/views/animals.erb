@@ -1,32 +1,25 @@
-<h1>PET-SAVE</h1>
+<aside>
+          <form action="/animals" method="post">
+            <label>
+              <select name="id">
+                <% for animal in @animals %>
+                  <option value="<%= animal.id %>"><%= animal.name %></option>
+                <% end %>
+             </select>
+           </label>
+            <input type='submit' value="Show Details">
+          </form>
+</aside>
 
-<h1>Animals</h1>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Species</th>
-    <th>Breed</th>
-    <th>Gender</th>
-    <th>Age</th>
-    <th>Photo</th>
-    <th>Healthy</th>
-    <th>Safe</th>
-    <th>Adopted</th>
-    <th>Admission Date</th>
-  </tr>
-  <% for animal in @animals %>
-    <tr>
-      <td><a href="/animals/<%= animal.id %>"><%= animal.name %></a></td>
-      <td><%= animal.species %></td>
-      <td><%= animal.breed %></td>
-      <td><%= animal.gender %></td>
-      <td><%= animal.age %></td>
-      <td><%= animal.photo %></td>
-      <td><%= animal.healthy %></td>
-      <td><%= animal.safe %></td>
-      <td><%= animal.adopted %></td>
-      <td><%= animal.admission_date %></td>
-    </tr>
-  <% end %>
-</table>
+<main>
+    <p><%= @animal_details.name %></p>
+    <p><%= @animal_details.species %></p>
+    <p><%= @animal_details.breed %></p>
+    <p><%= @animal_details.gender %></p>
+    <p><%= @animal_details.age %></p>
+    <p><%= @animal_details.photo %></p>
+    <p><%= @animal_details.healthy %></p>
+    <p><%= @animal_details.safe %></p>
+    <p><%= @animal_details.adopted %></p>
+    <p><%= @animal_details.admission_date %></p>
+</main>

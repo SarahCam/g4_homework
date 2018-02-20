@@ -2,18 +2,49 @@
 @import url(https://fonts.googleapis.com/css?family=Cabin+Sketch);
 
 body {
-  background: lightyellow url('/images/animal-paw-print.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  /* background-image:
-  linear-gradient(to bottom, rgba(76, 158, 217, 0.3), rgba(0,0,255,0.3)),
-  url('/images/animal-paw-print.png'); */
   color: black;
-  font-family: 'Cabin Sketch', serif;
+  font-family: 'Open Sans', serif;
+  font-size: 12px;
   padding: 0px;
   margin: 0px;
+}
+
+header {
+  background: black;
+  color: lightyellow;
+  font-family: 'Cabin Sketch', serif;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+
+section {
+  background: lightyellow;
+  display: flex;
+  flex: 1;
+  height: 75vh;
+}
+
+aside {
+  background: lightblue;
+  flex-direction: column;
+  float: left;
+}
+
+main {
+  background: lightyellow;
+  flex-direction: column;
+  float: right;
+}
+
+footer {
+  background: black;
+  color: lightyellow;
+  font-family: 'Cabin Sketch', serif;
+  display: flex;
+  flex: 1;
+  align-self: flex-end;
+  justify-content: center;
 }
 
 h1 {
@@ -24,16 +55,7 @@ h1 {
 }
 
 h2 {
-  font-family: 'Open Sans', serif;
   font-size: 30px;
   margin: 0px;
   padding: 0px;
-}
-
-.flex {
-  display: flex;
-}
-
-.flex--row {
-  flex-direction: row;
 }

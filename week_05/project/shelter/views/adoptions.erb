@@ -1,26 +1,40 @@
-<h1>PET-SAVE</h1>
-
-<h1>Adoptions</h1>
-
-<table>
-  <tr>
-    <th>Animal</th>
-    <th>Owner</th>
-    <th>Adoption Date</th>
-  </tr>
-  <% for adoption in @adoptions %>
+<aside>
+  <table>
     <tr>
-      <td>
-        <a href="/animals/<%= adoption.animal_id %>">
-          <%= Animal.find_by_id(adoption.animal_id).name %>
-        </a>
-      </td>
-      <td>
-        <a href="/owners/<%= adoption.owner_id %>">
-          <%= Owner.find_by_id(adoption.owner_id).first_name %>
-        </a>
-      </td>
-      <td><%= adoption.adoption_date %></td>
+      <th>Animal</th>
     </tr>
-  <% end %>
-</table>
+    <% for adoption in @adoptions %>
+      <tr>
+        <td>
+          <a href="/animals/<%= adoption.animal_id %>">
+            <%= Animal.find_by_id(adoption.animal_id).name %>
+          </a>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+</aside>
+<main>
+  <table>
+    <tr>
+      <th>Animal</th>
+      <th>Owner</th>
+      <th>Adoption Date</th>
+    </tr>
+    <% for adoption in @adoptions %>
+      <tr>
+        <td>
+          <a href="/animals/<%= adoption.animal_id %>">
+            <%= Animal.find_by_id(adoption.animal_id).name %>
+          </a>
+        </td>
+        <td>
+          <a href="/owners/<%= adoption.owner_id %>">
+            <%= Owner.find_by_id(adoption.owner_id).first_name %>
+          </a>
+        </td>
+        <td><%= adoption.adoption_date %></td>
+      </tr>
+    <% end %>
+  </table>
+</main>

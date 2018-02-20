@@ -17,7 +17,7 @@ class Animal
     @healthy = options['healthy'] if options['healthy']
     @safe = options['safe'] if options['safe']
     @adopted = options['adopted']
-    @admission_date = options['admission_date']  
+    @admission_date = options['admission_date']
   end
 
   def save()
