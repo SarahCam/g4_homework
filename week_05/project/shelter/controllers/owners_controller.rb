@@ -16,3 +16,7 @@ post '/owners/edit' do
   owner.update()
   redirect to("/owners")
 end
+
+post '/owners/show' do
+  redirect to("/owners")
+end

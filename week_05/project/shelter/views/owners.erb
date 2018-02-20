@@ -1,4 +1,5 @@
 <aside>
+  <% if !@owner_details %>
           <form action="/owners" method="post">
             <label>
               <select name="id">
@@ -9,6 +10,7 @@
            </label>
             <input type='submit' value="Show Details">
           </form>
+  <% end %>
 </aside>
 
 <main>
@@ -26,6 +28,9 @@
     <input type='text' value="<%= @owner_details.registration_date %>" name="registration_date">
     <input type='hidden' value="<%= @owner_details.id %>" name="id">
     <input type='submit' value="Update Details">
+  </form>
+  <form action="/owners/show" method="post">
+    <input type='submit' value="Show All Owners">
   </form>
   <% end %>
 </main>

@@ -16,3 +16,7 @@ post '/animals/edit' do
   animal.update()
   redirect to("/animals")
 end
+
+post '/animals/show' do
+  redirect to("/animals")
+end
