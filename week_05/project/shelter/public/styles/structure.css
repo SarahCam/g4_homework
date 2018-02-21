@@ -19,7 +19,7 @@ header {
 }
 
 section {
-  background: whitesmoke;
+  background: white;
   display: flex;
   flex: 1;
   height: 75vh;
@@ -29,14 +29,12 @@ section {
 aside {
   background: whitesmoke;
   flex-direction: column;
-  /* float: left; */
   flex: 1;
 }
 
 main {
   background: whitesmoke;
   flex-direction: column;
-  /* float: right; */
   flex: 1;
 }
 
