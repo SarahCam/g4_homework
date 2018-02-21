@@ -11,35 +11,38 @@ body {
 
 header {
   background: black ;
-  color: lightyellow;
+  color: whitesmoke;
   font-family: 'Cabin Sketch', serif;
   display: flex;
   flex: 1;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 section {
-  background: lightyellow;
+  background: whitesmoke;
   display: flex;
   flex: 1;
   height: 75vh;
+  border: 1px;
 }
 
 aside {
-  background: lightblue;
+  background: whitesmoke;
   flex-direction: column;
   float: left;
+  flex: 1;
 }
 
 main {
-  background: lightyellow;
+  background: whitesmoke;
   flex-direction: column;
   float: right;
+  flex: 1;
 }
 
 footer {
   background: black;
-  color: lightyellow;
+  color: whitesmoke;
   font-family: 'Cabin Sketch', serif;
   display: flex;
   flex: 1;
@@ -55,10 +58,43 @@ h1 {
 }
 
 h2 {
-  font-size: 30px;
+  font-family: 'Cabin Sketch', cursive;
+  font-size: 60px;
   margin: 0px;
   padding: 0px;
 }
+
+h3 {
+  font-size: 60px;
+  margin: 0px;
+  padding: 0px;
+}
+
+nav ul {
+ margin: 0;
+ padding: 5px;
+ list-style-type: none;
+ text-align: center;
+ background-color: #000;
+ }
+
+nav ul li {
+ display: inline;
+ }
+
+nav ul li a {
+ font-size: 24px;
+ text-decoration: none;
+ padding: .2em 1em;
+ color: #fff;
+ background-color: #000;
+ }
+
+nav ul li a:hover {
+ color: #000;
+ background-color: #fff;
+ }
+
 
 img {
   /* object-fit: contain;  */
