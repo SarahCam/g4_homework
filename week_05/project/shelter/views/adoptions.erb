@@ -32,7 +32,7 @@
       <th>Choose Owner</th>
     </tr>
     <% for animal in @animals %>
-      <% if animal.adopted == 'f' %>
+      <% if animal.adopted == 'f' && animal.safe == 'Yes' && animal.healthy == 'Yes' %>
       <tr>
         <form action="/adoptions" method="post">
           <td><a>
