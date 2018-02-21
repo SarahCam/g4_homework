@@ -4,14 +4,20 @@ require('pry')
 require('date')
 
 require_relative('../models/animal')
+require_relative('../models/owner')
+require_relative('../models/adoption')
 
 
 class AnimalTest < MiniTest::Test
 
   def setup
 
+    # DELETE ADOPTIONS
+    Adoption.delete_all()
     # DELETE ANIMALS
     Animal.delete_all()
+    # DELETE ANIMALS
+    Owner.delete_all()
 
     # CREATE ANIMALS
     @animal_1 = Animal.new({ "name" => "Harry",
@@ -50,6 +56,20 @@ class AnimalTest < MiniTest::Test
                             "admission_date" => DateTime.new(2018,2,11).to_s
                           })
     @animal_3.save()
+
+    # CREATE OWNERS
+    @owner_1 = Owner.new({  "first_name" => "Bill",
+                            "last_name" => "Wardlaw",
+                            "telephone" => "01786 832914",
+                            "email" => "bill.wardlaw@gmail.com",
+                            "address" => "11 PistolMakers Row",
+                            "postcode" => "FK16 7RB",
+                            "species" => "Dog",
+                            "breed" => "No preference",
+                            "seeks_pet" => true,
+                            "registration_date" => DateTime.new(2018,2,18).to_s
+                          })
+    @owner_1.save()
   end
 
   def test_get_dog_name___Harry
@@ -89,6 +109,13 @@ class AnimalTest < MiniTest::Test
     @animal_2.gender = "Male"
     @animal_2.update()
     assert_equal("Male", Animal.find_by_id(@animal_2.id).gender)
+  end
+
+  def test_adopt_by___Harry_is_adopted_by_Bill
+    @animal_1.adopted_by(@owner_1)
+    assert_equal(true, @animal_1.adopted)
+    assert_equal(false, @owner_1.seeks_pet)
+    assert_equal(1, Adoption.find_all().count())
   end
 
   # def test_update__admission_date___Moggy

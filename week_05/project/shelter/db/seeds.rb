@@ -90,21 +90,8 @@ owner_3 = Owner.new({  "first_name" => "Gavin",
 owner_3.save()
 
 # CREATE ADOPTIONS
-adoption_1 = Adoption.new({  "animal_id" => animal_1.id,
-                              "owner_id" => owner_1.id,
-                              "adoption_date" => DateTime.new(2018,2,14).to_s
-                      })
-adoption_1.save()
-adoption_2 = Adoption.new({  "animal_id" => animal_2.id,
-                              "owner_id" => owner_2.id,
-                              "adoption_date" => DateTime.new(2018,2,15).to_s
-                      })
-adoption_2.save()
-adoption_3 = Adoption.new({  "animal_id" => animal_3.id,
-                              "owner_id" => owner_3.id,
-                              "adoption_date" => DateTime.new(2018,2,16).to_s
-                      })
-adoption_3.save()
+animal_1.adopted_by(owner_1)
+animal_2.adopted_by(owner_2)
 
 binding.pry
 nil

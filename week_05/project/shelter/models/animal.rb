@@ -1,5 +1,7 @@
 require('pry')
 require_relative('../db/sql_runner')
+require_relative('../models/adoption')
+require_relative('../models/owner')
 
 class Animal
 
@@ -50,6 +52,18 @@ class Animal
            WHERE id = $11"
     values = [@name, @species, @breed, @gender, @age, @photo, @healthy, @safe, @adopted, @admission_date, @id]
     SqlRunner.run(sql,values)
+  end
+
+  def adopted_by(owner)
+    @adopted = true
+    owner.seeks_pet = false
+    adoption = Adoption.new({ "owner_id" => owner.id,
+                              "animal_id" => @id,
+                              "adoption_date" => DateTime.new(2018,2,18).to_s
+                           })
+    update()
+    owner.update()
+    adoption.save()
   end
 
   def self.find_by_id(id)

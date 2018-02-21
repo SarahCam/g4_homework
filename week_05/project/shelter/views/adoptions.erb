@@ -1,20 +1,5 @@
 <aside>
-  <table>
-    <tr>
-      <th>Animal</th>
-    </tr>
-    <% for adoption in @adoptions %>
-      <tr>
-        <td>
-          <a href="/animals/<%= adoption.animal_id %>">
-            <%= Animal.find_by_id(adoption.animal_id).name %>
-          </a>
-        </td>
-      </tr>
-    <% end %>
-  </table>
-</aside>
-<main>
+  <h1>ADOPTED</h1>
   <table>
     <tr>
       <th>Animal</th>
@@ -35,6 +20,38 @@
         </td>
         <td><%= adoption.adoption_date %></td>
       </tr>
+    <% end %>
+  </table>
+</aside>
+
+<main>
+  <h1>AVAILABLE</h1>
+  <table>
+    <tr>
+      <th>Animal</th>
+      <th>Choose Owner</th>
+    </tr>
+    <% for animal in @animals %>
+      <% if animal.adopted == 'f' %>
+      <tr>
+        <form action="/adoptions" method="post">
+          <td><a>
+            <input type='hidden' value="<%= animal.id %>" name="animal_id">
+            <%= animal.name %>
+          </a></td>
+          <td><a>
+            <label>
+              <select name="owner_id">
+                <% for owner in @owners %>
+                  <option value="<%= owner.id %>"><%= owner.first_name %></option>
+                <% end %>
+             </select>
+           </label>
+           <input type='submit' value="Adopt">
+          </a></td>
+        </form>
+      </tr>
+      <% end %>
     <% end %>
   </table>
 </main>
