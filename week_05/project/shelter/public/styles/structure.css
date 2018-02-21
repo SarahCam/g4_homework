@@ -29,14 +29,14 @@ section {
 aside {
   background: whitesmoke;
   flex-direction: column;
-  float: left;
+  /* float: left; */
   flex: 1;
 }
 
 main {
   background: whitesmoke;
   flex-direction: column;
-  float: right;
+  /* float: right; */
   flex: 1;
 }
 
@@ -101,5 +101,10 @@ img {
   width: 100%;
   max-width: 400px;
   /* height: auto; */
+}
 
+@media all and (max-width: 700px) {
+  section {
+    flex-direction: column;
+  }
 }
