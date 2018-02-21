@@ -50,6 +50,70 @@ animal_3 = Animal.new({ "name" => "Blue",
                         "admission_date" => DateTime.new(2018,2,11).to_s
                       })
 animal_3.save()
+animal_4 = Animal.new({ "name" => "Brutus",
+                        "species" => "Dog",
+                        "gender" => "Male",
+                        "healthy" => "Check",
+                        "safe" => "Check",
+                        "adopted" => false,
+                        "admission_date" => DateTime.new(2018,2,1).to_s
+                      })
+animal_4.save()
+animal_5 = Animal.new({ "name" => "Tabatha",
+                        "species" => "Rabbit",
+                        "gender" => "Female",
+                        "healthy" => "Check",
+                        "safe" => "Check",
+                        "adopted" => false,
+                        "admission_date" => DateTime.new(2018,1,13).to_s
+                      })
+animal_5.save()
+animal_6 = Animal.new({ "name" => "Calvin",
+                        "species" => "Cat",
+                        "gender" => "Male",
+                        "healthy" => "Check",
+                        "safe" => "Check",
+                        "adopted" => false,
+                        "admission_date" => DateTime.new(2018,2,11).to_s
+                      })
+animal_6.save()
+animal_7 = Animal.new({ "name" => "Twinkle",
+                        "species" => "Horse",
+                        "gender" => "Female",
+                        "healthy" => "Check",
+                        "safe" => "Check",
+                        "adopted" => false,
+                        "admission_date" => DateTime.new(2018,1,31).to_s
+                      })
+animal_7.save()
+animal_8 = Animal.new({ "name" => "Bongo",
+                        "species" => "Dog",
+                        "gender" => "Male",
+                        "healthy" => "Check",
+                        "safe" => "Check",
+                        "adopted" => false,
+                        "admission_date" => DateTime.new(2018,2,10).to_s
+                      })
+animal_8.save()
+animal_9 = Animal.new({ "name" => "Alphonso",
+                        "species" => "Cat",
+                        "gender" => "Male",
+                        "healthy" => "Check",
+                        "safe" => "Check",
+                        "adopted" => false,
+                        "admission_date" => DateTime.new(2018,1,25).to_s
+                      })
+animal_9.save()
+animal_10 = Animal.new({ "name" => "Sapphire",
+                        "species" => "Cat",
+                        "gender" => "Female",
+                        "healthy" => "Check",
+                        "safe" => "Check",
+                        "adopted" => false,
+                        "admission_date" => DateTime.new(2018,2,2).to_s
+                      })
+animal_10.save()
+
 
 # CREATE OWNERS
 owner_1 = Owner.new({  "first_name" => "Bill",

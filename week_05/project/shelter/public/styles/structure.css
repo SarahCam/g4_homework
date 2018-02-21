@@ -2,7 +2,7 @@
 @import url(https://fonts.googleapis.com/css?family=Cabin+Sketch);
 
 body {
-  color: black;
+  color: black url('/images/background.jpg');
   font-family: 'Open Sans', serif;
   font-size: 12px;
   padding: 0px;
@@ -10,7 +10,7 @@ body {
 }
 
 header {
-  background: black;
+  background: black ;
   color: lightyellow;
   font-family: 'Cabin Sketch', serif;
   display: flex;
@@ -58,4 +58,10 @@ h2 {
   font-size: 30px;
   margin: 0px;
   padding: 0px;
+}
+
+img {
+  /* object-fit: contain;  */
+  width: 100%;
+  height: auto;
 }

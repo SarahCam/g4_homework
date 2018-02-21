@@ -1,5 +1,27 @@
 <aside>
   <% if !@animal_details %>
+  <h1>Animals</h1>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Species</th>
+      <th>Breed</th>
+      <th>Gender</th>
+      <th>Age</th>
+      <th>Admission Date</th>
+    </tr>
+    <% for animal in @animals %>
+      <tr>
+        <td><%= animal.name %></td>
+        <td><%= animal.species %></td>
+        <td><%= animal.breed %></td>
+        <td><%= animal.gender %></td>
+        <td><%= animal.age %></td>
+        <td><%= animal.admission_date %></td>
+      </tr>
+    <% end %>
+  </table>
+
           <form action="/animals" method="post">
             <label>
               <select name="id">
@@ -8,24 +30,57 @@
                 <% end %>
              </select>
            </label>
-            <input type='submit' value="Show Details">
+            <input type='submit' value="Edit Details">
           </form>
   <% end %>
 </aside>
 
 <main>
   <% if @animal_details %>
+  <h1>Animal Details</h1>
   <form action="/animals/edit" method="post">
-    <input type='text' value="<%= @animal_details.name %>" name="name">
-    <input type='text' value="<%= @animal_details.species %>" name="species">
-    <input type='text' value="<%= @animal_details.breed %>" name="breed">
-    <input type='text' value="<%= @animal_details.gender %>" name="gender">
-    <input type='text' value="<%= @animal_details.age %>" name="age">
-    <input type='text' value="<%= @animal_details.photo %>" name="photo">
-    <input type='text' value="<%= @animal_details.healthy %>" name="healthy">
-    <input type='text' value="<%= @animal_details.safe %>" name="safe">
-    <input type='text' value="<%= @animal_details.adopted %>" name="adopted">
-    <input type='text' value="<%= @animal_details.admission_date %>" name="admission_date">
+    <table>
+      <tr>
+        <td>Name</td>
+        <td><input type='text' value="<%= @animal_details.name %>" name="name"></td>
+      </tr>
+      <tr>
+        <td>Species</td>
+        <td><input type='text' value="<%= @animal_details.species %>" name="species"></td>
+      </tr>
+      <tr>
+        <td>Breed</td>
+        <td><input type='text' value="<%= @animal_details.breed %>" name="breed"></td>
+      </tr>
+      <tr>
+        <td>Gender</td>
+        <td><input type='text' value="<%= @animal_details.gender %>" name="gender"></td>
+      </tr>
+      <tr>
+        <td>Age</td>
+        <td><input type='text' value="<%= @animal_details.age %>" name="age"></td>
+      </tr>
+      <tr>
+        <td>Photo</td>
+        <td><input type='text' value="<%= @animal_details.photo %>" name="photo"></td>
+      </tr>
+      <tr>
+        <td>Healthy</td>
+        <td><input type='text' value="<%= @animal_details.healthy %>" name="healthy"></td>
+      </tr>
+      <tr>
+        <td>Safe</td>
+        <td><input type='text' value="<%= @animal_details.safe %>" name="safe"></td>
+      </tr>
+      <tr>
+        <td>Adopted</td>
+        <td><input type='text' value="<%= @animal_details.adopted %>" name="adopted"></td>
+      </tr>
+      <tr>
+        <td>Admission Date</td>
+        <td><input type='text' value="<%= @animal_details.admission_date %>" name="admission_date"></td>
+      </tr>
+    <table>
     <input type='hidden' value="<%= @animal_details.id %>" name="id">
     <input type='submit' value="Update Details">
   </form>

@@ -1,5 +1,25 @@
 <aside>
   <% if !@owner_details %>
+  <h1>Owners</h1>
+  <table>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Telephone</th>
+      <th>Email</th>
+      <th>Registration Date</th>
+    </tr>
+    <% for owner in @owners %>
+      <tr>
+        <td><%= owner.first_name %></td>
+        <td><%= owner.last_name %></td>
+        <td><%= owner.telephone %></td>
+        <td><%= owner.email %></td>
+        <td><%= owner.registration_date %></td>
+      </tr>
+    <% end %>
+  </table>
+
           <form action="/owners" method="post">
             <label>
               <select name="id">
@@ -8,24 +28,57 @@
                 <% end %>
              </select>
            </label>
-            <input type='submit' value="Show Details">
+            <input type='submit' value="Edit Details">
           </form>
   <% end %>
 </aside>
 
 <main>
   <% if @owner_details %>
+  <h1>Owner Details</h1>
   <form action="/owners/edit" method="post">
-    <input type='text' value="<%= @owner_details.first_name %>" name="first_name">
-    <input type='text' value="<%= @owner_details.last_name %>" name="last_name">
-    <input type='text' value="<%= @owner_details.telephone %>" name="telephone">
-    <input type='text' value="<%= @owner_details.email %>" name="email">
-    <input type='text' value="<%= @owner_details.address %>" name="address">
-    <input type='text' value="<%= @owner_details.postcode %>" name="postcode">
-    <input type='text' value="<%= @owner_details.species %>" name="species">
-    <input type='text' value="<%= @owner_details.breed %>" name="breed">
-    <input type='text' value="<%= @owner_details.seeks_pet %>" name="seeks_pet">
-    <input type='text' value="<%= @owner_details.registration_date %>" name="registration_date">
+    <table>
+      <tr>
+        <td>First Name</td>
+        <td><input type='text' value="<%= @owner_details.first_name %>" name="first_name"></td>
+      </tr>
+      <tr>
+        <td>Last Name</td>
+        <td><input type='text' value="<%= @owner_details.last_name %>" name="last_name"></td>
+      </tr>
+      <tr>
+        <td>Telephone</td>
+        <td><input type='text' value="<%= @owner_details.telephone %>" name="telephone"></td>
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td><input type='text' value="<%= @owner_details.email %>" name="email"></td>
+      </tr>
+      <tr>
+        <td>Address</td>
+        <td><input type='text' value="<%= @owner_details.address %>" name="address"></td>
+      </tr>
+      <tr>
+        <td>Postcode</td>
+        <td><input type='text' value="<%= @owner_details.postcode %>" name="postcode"></td>
+      </tr>
+      <tr>
+        <td>Species</td>
+        <td><input type='text' value="<%= @owner_details.species %>" name="species"></td>
+      </tr>
+      <tr>
+        <td>Breed</td>
+        <td><input type='text' value="<%= @owner_details.breed %>" name="breed"></td>
+      </tr>
+      <tr>
+        <td>Seeking Pet</td>
+        <td><input type='text' value="<%= @owner_details.seeks_pet %>" name="seeks_pet"></td>
+      </tr>
+      <tr>
+        <td>Registration Date</td>
+        <td><input type='text' value="<%= @owner_details.registration_date %>" name="registration_date"></td>
+      </tr>
+    </table>
     <input type='hidden' value="<%= @owner_details.id %>" name="id">
     <input type='submit' value="Update Details">
   </form>
