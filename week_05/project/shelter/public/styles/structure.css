@@ -99,5 +99,7 @@ nav ul li a:hover {
 img {
   /* object-fit: contain;  */
   width: 100%;
-  height: auto;
+  max-width: 400px;
+  /* height: auto; */
+
 }

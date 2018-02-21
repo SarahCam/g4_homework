@@ -20,7 +20,7 @@
     <% end %>
   </table>
 
-          <form action="/owners" method="post">
+  <form action="/owners" method="post">
             <label>
               <select name="id">
                 <% for owner in @owners %>
@@ -30,6 +30,8 @@
            </label>
             <input type='submit' value="Edit Details">
           </form>
+  <% else %>
+  <h1><%= @owner_details.first_name + " " + @owner_details.last_name%></h1>
   <% end %>
 </aside>
 
