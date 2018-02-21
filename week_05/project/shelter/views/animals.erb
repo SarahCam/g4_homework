@@ -35,6 +35,15 @@
   <% else %>
   <h1><%= @animal_details.name %></h1>
   <img src="<%= @animal_details.photo %>" alt="dog image">
+  <p>
+    <% if @animal_details.adopted == 't' %>
+        Adopted
+    <% elsif (@animal_details.safe != 'Yes' || @animal_details.healthy != 'Yes') %>
+        Not Ready for Adoption
+    <% else %>
+        Available for Adoption
+    <% end %>
+  </p>
   <% end %>
 </aside>
 
