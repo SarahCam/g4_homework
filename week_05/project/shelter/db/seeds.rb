@@ -88,7 +88,7 @@ animal_7 = Animal.new({ "name" => "Twinkle",
                         "gender" => "Female",
                         "age" => 11,
                         "photo" => "/images/horse.jpg",
-                        "healthy" => "Check",
+                        "healthy" => "Yes",
                         "safe" => "Check",
                         "adopted" => false,
                         "admission_date" => DateTime.new(2018,1,31).to_s
@@ -100,7 +100,7 @@ animal_8 = Animal.new({ "name" => "Bongo",
                         "age" => 13,
                         "photo" => "/images/dog.jpg",
                         "healthy" => "Check",
-                        "safe" => "Check",
+                        "safe" => "Yes",
                         "adopted" => false,
                         "admission_date" => DateTime.new(2018,2,10).to_s
                       })
@@ -109,9 +109,9 @@ animal_9 = Animal.new({ "name" => "Alphonso",
                         "species" => "Cat",
                         "gender" => "Male",
                         "age" => 2,
-                        "healthy" => "Check",
+                        "healthy" => "Yes",
                         "photo" => "/images/cat.jpg",
-                        "safe" => "Check",
+                        "safe" => "Yes",
                         "adopted" => false,
                         "admission_date" => DateTime.new(2018,1,25).to_s
                       })
@@ -121,8 +121,8 @@ animal_10 = Animal.new({ "name" => "Sapphire",
                         "gender" => "Female",
                         "age" => 16,
                         "photo" => "/images/cat.jpg",
-                        "healthy" => "Check",
-                        "safe" => "Check",
+                        "healthy" => "Yes",
+                        "safe" => "Yes",
                         "adopted" => false,
                         "admission_date" => DateTime.new(2018,2,2).to_s
                       })
@@ -166,6 +166,42 @@ owner_3 = Owner.new({  "first_name" => "Gavin",
                         "registration_date" => DateTime.new(2018,1,3).to_s
                       })
 owner_3.save()
+owner_4 = Owner.new({  "first_name" => "Mary",
+                        "last_name" => "Brown",
+                        "telephone" => "01786 842475",
+                        # "email" => "gavin@ideas.com",
+                        # "address" => "???",
+                        # "postcode" => "???",
+                        "species" => "Cat",
+                        # "breed" => "No preference",
+                        "seeks_pet" => true,
+                        "registration_date" => DateTime.new(2018,1,3).to_s
+                      })
+owner_4.save()
+owner_5 = Owner.new({  "first_name" => "Ben",
+                        "last_name" => "Doe",
+                        "telephone" => "01786 841222",
+                        # "email" => "gavin@ideas.com",
+                        # "address" => "???",
+                        # "postcode" => "???",
+                        "species" => "Cat",
+                        # "breed" => "No preference",
+                        "seeks_pet" => true,
+                        "registration_date" => DateTime.new(2018,1,11).to_s
+                      })
+owner_5.save()
+owner_6 = Owner.new({  "first_name" => "Mavis",
+                        "last_name" => "Smith",
+                        "telephone" => "01786 841033",
+                        # "email" => "gavin@ideas.com",
+                        # "address" => "???",
+                        # "postcode" => "???",
+                        "species" => "Horse",
+                        # "breed" => "No preference",
+                        "seeks_pet" => true,
+                        "registration_date" => DateTime.new(2018,1,14).to_s
+                      })
+owner_6.save()
 
 # CREATE ADOPTIONS
 animal_1.adopted_by(owner_1)
