@@ -3,15 +3,21 @@
   <h1>Owners</h1>
   <table>
     <tr>
-      <th>First Name</th>
-      <th>Last Name</th>
+      <th>Name</th>
+      <th></th>
       <th>Telephone</th>
       <th>Email</th>
-      <th>Registration Date</th>
+      <th>Registered</th>
     </tr>
     <% for owner in @owners %>
       <tr>
-        <td><%= owner.first_name %></td>
+
+        <td>
+          <a href="/owners/<%= owner.id %>">
+            <%= owner.first_name %>
+          </a>
+        </td>
+
         <td><%= owner.last_name %></td>
         <td><%= owner.telephone %></td>
         <td><%= owner.email %></td>
@@ -20,7 +26,7 @@
     <% end %>
   </table>
 
-  <form action="/owners" method="post">
+  <!-- <form action="/owners" method="post">
             <label>
               <select name="id">
                 <% for owner in @owners %>
@@ -29,7 +35,7 @@
              </select>
            </label>
             <input type='submit' value="Edit Details">
-          </form>
+          </form> -->
   <% else %>
   <h1><%= @owner_details.first_name + " " + @owner_details.last_name%></h1>
   <% end %>
@@ -84,8 +90,8 @@
     <input type='hidden' value="<%= @owner_details.id %>" name="id">
     <input type='submit' value="Update Details">
   </form>
-  <form action="/owners/show" method="post">
+  <!-- <form action="/owners/show" method="post">
     <input type='submit' value="Show All Owners">
-  </form>
+  </form> -->
   <% end %>
 </main>

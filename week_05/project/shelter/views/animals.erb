@@ -12,7 +12,13 @@
     </tr>
     <% for animal in @animals %>
       <tr>
-        <td><%= animal.name %></td>
+
+        <td>
+          <a href="/animals/<%= animal.id %>">
+            <%= animal.name %>
+          </a>
+        </td>
+
         <td><%= animal.species %></td>
         <td><%= animal.breed %></td>
         <td><%= animal.gender %></td>
@@ -22,7 +28,7 @@
     <% end %>
   </table>
 
-  <form action="/animals" method="post">
+  <!-- <form action="/animals" method="post">
             <label>
               <select name="id">
                 <% for animal in @animals %>
@@ -31,7 +37,7 @@
              </select>
            </label>
             <input type='submit' value="Edit Details">
-  </form>
+  </form> -->
   <% else %>
   <h1><%= @animal_details.name %></h1>
   <img src="<%= @animal_details.photo %>" alt="dog image">
@@ -86,7 +92,7 @@
       </tr>
       <tr>
         <td>Adopted</td>
-        <td><input type='text' value="<%= @animal_details.adopted %>" name="adopted"></td>
+        <td><input type='text' value="<%= @animal_details.adopted %>" name="adopted" readonly></td>
       </tr>
       <tr>
         <td>Admission Date</td>
@@ -94,10 +100,10 @@
       </tr>
     </table>
     <input type='hidden' value="<%= @animal_details.id %>" name="id">
-    <input type='submit' value="Update Details">
+    <input class="bot" type='submit' value="Update Details">
   </form>
-  <form action="/animals/show" method="post">
+  <!-- <form action="/animals/show" method="post">
     <input type='submit' value="Show All Animals">
-  </form>
+  </form> -->
   <% end %>
 </main>

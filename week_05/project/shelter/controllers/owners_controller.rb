@@ -20,3 +20,9 @@ end
 post '/owners/show' do
   redirect to("/owners")
 end
+
+get '/owners/:id' do
+  @owners = Owner.find_all()
+  @owner_details = Owner.find_by_id(params['id'].to_i)
+  erb(:owners)
+end

@@ -7,6 +7,8 @@ td {
 }
 
 th {
+  font-size: 24px;
+  font-family: 'Cabin Sketch', serif;
   font-weight: bold;
   padding: 0px 20px 10px 0px;
   border-bottom: 1px solid black;
@@ -15,3 +17,11 @@ th {
 table {
   border-collapse: collapse;
 }
+
+/* table tr:hover {
+    background-color: lightgrey;
+}
+
+table tr {
+    background-color: whitesmoke;
+} */
