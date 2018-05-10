@@ -26,18 +26,9 @@
     <% end %>
   </table>
 
-  <!-- <form action="/owners" method="post">
-            <label>
-              <select name="id">
-                <% for owner in @owners %>
-                  <option value="<%= owner.id %>"><%= owner.first_name %></option>
-                <% end %>
-             </select>
-           </label>
-            <input type='submit' value="Edit Details">
-          </form> -->
   <% else %>
   <h1><%= @owner_details.first_name + " " + @owner_details.last_name%></h1>
+  <img src="/images/animal-paw-print.png" alt="owner image">
   <% end %>
 </aside>
 
@@ -84,7 +75,7 @@
       </tr>
       <tr>
         <td>Registration Date</td>
-        <td><input type='text' value="<%= @owner_details.registration_date %>" name="registration_date"></td>
+        <td><input type='date' value="<%= @owner_details.registration_date %>" name="registration_date"></td>
       </tr>
     </table>
     <input type='hidden' value="<%= @owner_details.id %>" name="id">

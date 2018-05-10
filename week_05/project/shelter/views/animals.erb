@@ -34,16 +34,6 @@
     <% end %>
   </table>
 
-  <!-- <form action="/animals" method="post">
-            <label>
-              <select name="id">
-                <% for animal in @animals %>
-                  <option value="<%= animal.id %>"><%= animal.name %></option>
-                <% end %>
-             </select>
-           </label>
-            <input type='submit' value="Edit Details">
-  </form> -->
   <% else %>
   <h1><%= @animal_details.name %></h1>
   <img src="<%= @animal_details.photo %>" alt="dog image">
@@ -102,14 +92,11 @@
       </tr>
       <tr>
         <td>Admission Date</td>
-        <td><input type='text' value="<%= @animal_details.admission_date %>" name="admission_date"></td>
+        <td><input type='date' value="<%= @animal_details.admission_date %>" name="admission_date"></td>
       </tr>
     </table>
     <input type='hidden' value="<%= @animal_details.id %>" name="id">
     <input class="bot" type='submit' value="Update Details">
   </form>
-  <!-- <form action="/animals/show" method="post">
-    <input type='submit' value="Show All Animals">
-  </form> -->
   <% end %>
 </main>

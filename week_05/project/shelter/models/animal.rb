@@ -59,7 +59,6 @@ class Animal
     owner.seeks_pet = false
     adoption = Adoption.new({ "owner_id" => owner.id,
                               "animal_id" => @id,
-                              # "adoption_date" => DateTime.new(2018,2,18).to_s
                               "adoption_date" => DateTime.now.to_s
                            })
     update()
